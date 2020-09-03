@@ -28,7 +28,7 @@ export class SignupComponent implements OnInit {
       password: this.password
     }))
 
-    // this.router.navigate(['/login']);
+    this.router.navigate(['/login']);
 
   }
 }

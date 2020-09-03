@@ -1,18 +1,18 @@
 isloggedin : {{isLoggedIn }}
 
 <ng-container *ngIf="isLoggedIn; else elseTemplate">
-    <button class="logout" (click)="Logout()">
+    <button class="logout button" (click)="Logout()">
         Logout
     </button>
 </ng-container>
 <ng-template #elseTemplate>
-    <button class="login" routerLink="/login">
+    <button class="login button" routerLink="/login">
         Login
     </button>
 </ng-template>
 
 <div>
-    <button routerLink="/addmovie" class="addMovie" *ngIf="this.isLoggedIn ">
+    <button routerLink="/addmovie" class="button addMovie" *ngIf="this.isLoggedIn ">
         Add Movie
     </button>
 

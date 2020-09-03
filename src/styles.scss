@@ -1,10 +1,31 @@
 /* You can add global styles to this file, and also import other style files */
-.addMovie,.updateMovie,.login{
-    color: white;
-    background: green;
-    border: 1px solid;
-    padding: 10px;
+
+.button{
+    padding:10px;
+     color: white;
+    border:1px solid;
+    cursor:pointer;
 }
+
+.addMovie,.updateMovie,.login{
+    
+    background: green;
+}
+
+.logout{
+    background: red;
+}
+
+.signup{
+    background: #80DEEA;
+}
+
+// .addMovie,.updateMovie,.login{
+//     color: white;
+//     background: green;
+//     border: 1px solid;
+//     padding: 10px;
+// }
 
 .info{
     margin:10px;
