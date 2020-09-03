@@ -3,3 +3,14 @@
 </button>
 
 isloggedin : {{isLoggedIn }}
+
+<ng-container *ngIf="isLoggedIn; else elseTemplate">
+    <button class="logout" (click)="Logout()">
+        Logout
+    </button>
+</ng-container>
+<ng-template #elseTemplate>
+    <button class="login" routerLink="/login">
+        Login
+    </button>
+</ng-template>
