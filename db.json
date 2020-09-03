@@ -1,13 +1,12 @@
-import { Component } from '@angular/core';
-import { Movie } from './model/Movie';
-@Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
-})
-export class AppComponent {
-
-  moviesList: Array<Movie> = [
+{
+  "users": [
+    {
+      "id": 1,
+      "username": "ninad",
+      "password": "virkar"
+    }
+  ],
+  "movies": [
     {
       "id": 1,
       "name": "The Dark Knight",
