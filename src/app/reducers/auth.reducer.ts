@@ -14,6 +14,10 @@ const initialState = {
 
 export function authreducer(state = initialState, action) {
     switch (action.type) {
+        case AuthActions.SIGNUP:
+            let newUsers = [...state["users"], action.payload]
+            state = { ...state, users: newUsers }
+            return state
         case AuthActions.LOGIN:
             let validUser = state["users"].filter(x => x["username"] == action.payload.username && x["password"] == action.payload.password).length;
             if (validUser > 0) {
@@ -25,7 +29,7 @@ export function authreducer(state = initialState, action) {
             return state;
 
         default:
-            return state["isLoggedIn"];
+            return state;
 
     }
 }

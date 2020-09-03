@@ -22,7 +22,9 @@ export class MovieListComponent implements OnInit {
   isLoggedIn: Observable<any>;
   constructor(private data: DataService, private store: Store<AppState>, private router: Router) {
     this.movielist = store.select('movie');
-    this.isLoggedIn = store.select("auth");
+    store.select("auth").subscribe((data) => {
+      this.isLoggedIn = data["isLoggedIn"]
+    });
   }
 
   ngOnInit(): void {

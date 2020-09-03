@@ -1,1 +1,22 @@
-<p>signup works!</p>
+<div class="container">
+    <h2>Sign Up Form</h2>
+
+    <form (ngSubmit)="SignUp()">
+        <div class="info">
+            <label htmlFor="name">
+                Username
+            </label>
+            <input type="text" name="name" id="" [(ngModel)]="username" required>
+        </div>
+
+
+        <div class="info">
+            <label htmlFor="genre">
+                Password
+            </label>
+            <input type="text" name="genre" id="" required [(ngModel)]="password">
+        </div>
+
+        <input type="submit" value="Login" class="addMovie">
+    </form>
+</div>
