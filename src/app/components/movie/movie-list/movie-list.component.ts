@@ -19,10 +19,10 @@ export class MovieListComponent implements OnInit {
 
   // movielist: Array<Movie>;
   movielist: Observable<Movie[]>;
-
+  isLoggedIn: Observable<any>;
   constructor(private data: DataService, private store: Store<AppState>, private router: Router) {
     this.movielist = store.select('movie');
-
+    this.isLoggedIn = store.select("auth");
   }
 
   ngOnInit(): void {

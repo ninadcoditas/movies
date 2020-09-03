@@ -1,9 +1,8 @@
 {
   "users": [
     {
-      "id": 1,
-      "username": "ninad",
-      "password": "virkar"
+      "username": "admin",
+      "password": "admin"
     }
   ],
   "movies": [

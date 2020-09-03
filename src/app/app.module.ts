@@ -9,11 +9,14 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { StoreModule } from '@ngrx/store';
 import { reducer } from './reducers/movie.reducer';
+import { authreducer } from './reducers/auth.reducer'
 import { HeaderComponent } from './components/header/header.component';
 import { AddComponent } from './components/movie/add/add.component';
 import { UpdateComponent } from './components/movie/update/update.component'
 import { HomeComponent } from './components/home/home.component';
-import { FormsModule } from '@angular/forms'
+import { FormsModule } from '@angular/forms';
+import { SignupComponent } from './components/auth/signup/signup.component';
+import { LoginComponent } from './components/auth/login/login.component'
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,7 +25,9 @@ import { FormsModule } from '@angular/forms'
     AddComponent,
     UpdateComponent,
     HomeComponent,
-    HeaderComponent
+    HeaderComponent,
+    SignupComponent,
+    LoginComponent
 
   ],
   imports: [
@@ -31,7 +36,8 @@ import { FormsModule } from '@angular/forms'
     HttpClientModule,
     FormsModule,
     StoreModule.forRoot({
-      movie: reducer
+      movie: reducer,
+      auth: authreducer
     })
   ],
   providers: [],

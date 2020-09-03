@@ -1,3 +1,5 @@
-<button routerLink="/addmovie" class="addMovie">
+<button routerLink="/addmovie" class="addMovie" *ngIf="this.isLoggedIn | async">
     Add Movie
 </button>
+
+isloggedin : {{isLoggedIn | async}}

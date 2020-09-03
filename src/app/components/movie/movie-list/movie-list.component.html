@@ -4,7 +4,7 @@
             <div>
                 <movie-card [movie]="movie"></movie-card>
             </div>
-            <div>
+            <div *ngIf="this.isLoggedIn|async">
                 <img src="assets/image/update.png" (click)=updateMovie(movie)>
                 <img src="assets/image/delete.png" (click)="deleteMovie(movie.id)">
             </div>
