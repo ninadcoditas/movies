@@ -1,5 +1,21 @@
 <div class="list">
-    <div *ngFor="let movie of movielist" class="card">
-        <movie-card [movie]="movie"></movie-card>
-    </div>
+
+    <ng-container *ngIf="movielist.length>0; else elseTemplate">
+        <div *ngFor="let movie of movielist" class="card">
+            <div>
+                <movie-card [movie]="movie"></movie-card>
+            </div>
+            <div>
+                <img src="assets/image/delete.png" (click)="deleteMovie(movie.id)">
+            </div>
+        </div>
+    </ng-container>
+    <ng-template #elseTemplate>
+        <div class="card no-movie">
+            No movies to show
+        </div>
+    </ng-template>
+
+
+
 </div>

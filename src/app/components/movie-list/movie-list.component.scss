@@ -1,10 +1,21 @@
 .card{
     margin: 10px;
     padding: 10px;
-    background-color: #F5F5F5;
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    img{
+        height: 30px;
+        width: 30px;
+    }
 }
 
 .list{
     background-color: #00BCD4;
     padding:10px;
+
+    .no-movie{
+        justify-content: center;
+    }
 }
