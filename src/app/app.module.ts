@@ -10,15 +10,19 @@ import { HttpClientModule } from '@angular/common/http';
 import { StoreModule } from '@ngrx/store';
 import { reducer } from './reducers/movie.reducer';
 import { HeaderComponent } from './components/header/header.component';
-
+import { AddComponent } from './components/movie/add/add.component';
+import { UpdateComponent } from './components/movie/update/update.component'
+import { HomeComponent } from './components/home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MovieListComponent,
     MovieCardComponent,
-
-    HeaderComponent,
+    AddComponent,
+    UpdateComponent,
+    HomeComponent,
+    HeaderComponent
 
   ],
   imports: [
