@@ -1,7 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
-.addMovie{
+.addMovie,.updateMovie{
     color: white;
     background: green;
     border: 1px solid;
     padding: 10px;
+}
+
+.info{
+    margin:10px;
 }

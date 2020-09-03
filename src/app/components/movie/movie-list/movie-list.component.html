@@ -5,6 +5,7 @@
                 <movie-card [movie]="movie"></movie-card>
             </div>
             <div>
+                <img src="assets/image/update.png" (click)=updateMovie(movie)>
                 <img src="assets/image/delete.png" (click)="deleteMovie(movie.id)">
             </div>
         </div>
