@@ -13,7 +13,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { AddComponent } from './components/movie/add/add.component';
 import { UpdateComponent } from './components/movie/update/update.component'
 import { HomeComponent } from './components/home/home.component';
-
+import { FormsModule } from '@angular/forms'
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,6 +29,7 @@ import { HomeComponent } from './components/home/home.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    FormsModule,
     StoreModule.forRoot({
       movie: reducer
     })

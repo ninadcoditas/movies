@@ -1,1 +1,22 @@
-<p>add works!</p>
+<div class="container">
+    <h2>Add Movie details</h2>
+
+    <form (ngSubmit)="onSubmit()">
+        <div class="info">
+            <label htmlFor="name">
+                Name
+            </label>
+            <input type="text" name="name" id="" [(ngModel)]="name" required>
+        </div>
+
+
+        <div class="info">
+            <label htmlFor="genre">
+                Genre
+            </label>
+            <input type="text" name="genre" id="" [(ngModel)]="genre" required>
+        </div>
+
+        <input type="submit" value="Add Movie" class="addMovie">
+    </form>
+</div>
