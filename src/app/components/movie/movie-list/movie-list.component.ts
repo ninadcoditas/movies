@@ -20,13 +20,14 @@ export class MovieListComponent implements OnInit {
   // movielist: Array<Movie>;
   movielist: Observable<Movie[]>;
   isLoggedIn: Observable<any>;
+  subscription
   constructor(private data: DataService, private store: Store<AppState>, private router: Router) {
     this.movielist = store.select('movie');
 
   }
 
   ngOnInit(): void {
-    this.store.select("auth").subscribe((data) => {
+    this.subscription = this.store.select("auth").subscribe((data) => {
       this.isLoggedIn = data["isLoggedIn"]
     });
   }
@@ -39,4 +40,9 @@ export class MovieListComponent implements OnInit {
     this.router.navigate(['/updatemovie'], { state: movie })
   }
 
+  ngOnDestroy(): void {
+    //Called once, before the instance is destroyed.
+    //Add 'implements OnDestroy' to the class.
+    this.subscription.unsubscribe()
+  }
 }

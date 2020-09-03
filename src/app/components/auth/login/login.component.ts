@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { AppState } from '../../../app.state'
+import { Router } from '@angular/router'
 
 import { Observable } from 'rxjs';
 import * as AuthActions from '../../../actions/auth.actions'
@@ -11,8 +12,9 @@ import * as AuthActions from '../../../actions/auth.actions'
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-  isLoggedIn
-  constructor(public store: Store<AppState>) {
+  isLoggedIn;
+  subscription
+  constructor(public store: Store<AppState>, public router: Router) {
     this.isLoggedIn = store.select("auth");
   }
   username: string;
@@ -28,9 +30,14 @@ export class LoginComponent implements OnInit {
       password: this.password
     }))
 
-    //  this.store.select("auth");
+    this.subscription = this.store.select("auth").subscribe((data) => {
+      this.isLoggedIn = data["isLoggedIn"]
+    });
 
-    console.log(this.isLoggedIn)
+    this.isLoggedIn == true ? this.router.navigate(['/home']) : alert("invalid creds");
+  }
 
+  ngOnDestroy() {
+    this.subscription.unsubscribe()
   }
 }

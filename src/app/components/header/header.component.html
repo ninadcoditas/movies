@@ -1,7 +1,3 @@
-<button routerLink="/addmovie" class="addMovie" *ngIf="this.isLoggedIn ">
-    Add Movie
-</button>
-
 isloggedin : {{isLoggedIn }}
 
 <ng-container *ngIf="isLoggedIn; else elseTemplate">
@@ -14,3 +10,10 @@ isloggedin : {{isLoggedIn }}
         Login
     </button>
 </ng-template>
+
+<div>
+    <button routerLink="/addmovie" class="addMovie" *ngIf="this.isLoggedIn ">
+        Add Movie
+    </button>
+
+</div>

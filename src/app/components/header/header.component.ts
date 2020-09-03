@@ -11,9 +11,10 @@ import * as AuthActions from '../../actions/auth.actions'
 })
 export class HeaderComponent implements OnInit {
 
-  isLoggedIn
+  isLoggedIn: Observable<boolean>;
+  subscription;
   constructor(public store: Store<AppState>) {
-    store.select("auth").subscribe((data) => {
+    this.subscription = store.select("auth").subscribe((data) => {
       this.isLoggedIn = data["isLoggedIn"]
     });
 
@@ -24,9 +25,15 @@ export class HeaderComponent implements OnInit {
   }
   Logout() {
     this.store.dispatch(new AuthActions.Logout())
-    this.store.select("auth").subscribe((data) => {
+    this.subscription = this.store.select("auth").subscribe((data) => {
       this.isLoggedIn = data["isLoggedIn"]
     });
+  }
+
+  ngOnDestroy(): void {
+    //Called once, before the instance is destroyed.
+    //Add 'implements OnDestroy' to the class.
+    this.subscription.unsubscribe();
   }
 
 
