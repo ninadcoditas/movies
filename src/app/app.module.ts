@@ -9,16 +9,17 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { StoreModule } from '@ngrx/store';
 import { reducer } from './reducers/movie.reducer';
-import { HomeComponent } from './components/home/home.component';
-import { HeaderComponent } from './components/header/header.component'
+import { HeaderComponent } from './components/header/header.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     MovieListComponent,
     MovieCardComponent,
-    HomeComponent,
-    HeaderComponent
+
+    HeaderComponent,
+
   ],
   imports: [
     BrowserModule,
