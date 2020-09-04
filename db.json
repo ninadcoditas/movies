@@ -17,14 +17,14 @@
       "name": "The Dark Knight",
       "genre": "Action,Crime,Drama",
       "navigationId": 6,
-      "rating": "9"
+      "rating": 8
     },
     {
       "id": 2,
       "name": "The Shawshank Redemption",
       "genre": "Drama  ",
       "navigationId": 4,
-      "rating": "10"
+      "rating": 8
     },
     {
       "name": "Fight Club",
@@ -54,7 +54,7 @@
     {
       "name": "Inception",
       "genre": "Action, Adventure, Sci-Fi",
-      "rating": "9",
+      "rating": 8,
       "id": 7
     }
   ]
