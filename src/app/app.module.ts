@@ -19,6 +19,7 @@ import { SignupComponent } from './components/auth/signup/signup.component';
 import { LoginComponent } from './components/auth/login/login.component';
 import { EffectsModule } from '@ngrx/effects'
 import { AuthEffects } from './effects/auth.effects';
+import { MovieEffects } from './effects/movie.effects'
 @NgModule({
   declarations: [
     AppComponent,
@@ -41,7 +42,7 @@ import { AuthEffects } from './effects/auth.effects';
       movie: reducer,
       auth: authreducer
     }),
-    EffectsModule.forRoot([AuthEffects])
+    EffectsModule.forRoot([AuthEffects, MovieEffects])
   ],
   providers: [],
   bootstrap: [AppComponent]
