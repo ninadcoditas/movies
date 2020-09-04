@@ -3,18 +3,18 @@
 
     <form (ngSubmit)="SignUp()">
         <div class="info">
-            <label htmlFor="name">
+            <label htmlFor="username">
                 Username
             </label>
-            <input type="text" name="name" id="" [(ngModel)]="username" required>
+            <input type="text" name="username" id="" [(ngModel)]="User.username" required>
         </div>
 
 
         <div class="info">
-            <label htmlFor="genre">
+            <label htmlFor="password">
                 Password
             </label>
-            <input type="text" name="genre" id="" required [(ngModel)]="password">
+            <input type="text" name="password" id="" required [(ngModel)]="User.password">
         </div>
 
         <input type="submit" value="Signup" class="signup button">

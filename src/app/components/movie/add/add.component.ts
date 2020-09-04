@@ -15,19 +15,14 @@ import * as MovieActions from '../../../actions/movie.actions'
 export class AddComponent implements OnInit {
 
   constructor(private store: Store<AppState>, private router: Router) { }
-  name: string;
 
-  id: number;
-  genre: string;
+  Movie: Movie = {} as Movie;
   ngOnInit(): void {
   }
 
   onSubmit() {
-    this.addMovie({
-      id: Math.floor(Math.random() * 100),
-      name: this.name,
-      genre: this.genre
-    })
+    this.Movie.id = Math.floor(Math.random() * 100)
+    this.addMovie(this.Movie)
   }
 
   addMovie(movieObj: Movie) {

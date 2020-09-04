@@ -42,6 +42,7 @@ export function reducer(state = initialState, action: MovieActions.Actions) {
         case MovieActions.UPDATE_MOVIE_SUCCESS:
             state = state.filter(x => x["id"] != action.payload["id"])
             state = [...state, action.payload].sort(function (a, b) { return a["id"] - b["id"] });
+
             return state;
 
 

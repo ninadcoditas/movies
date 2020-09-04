@@ -15,19 +15,18 @@ export class UpdateComponent implements OnInit {
 
   constructor(private store: Store<AppState>, private router: Router) { }
 
-  name: string;
-  genre: string;
-  id: number;
+  Movie: Movie = {} as Movie;
   ngOnInit(): void {
 
     console.log('data rec is ', window.history.state.name)
-    this.name = window.history.state.name;
-    this.genre = window.history.state.genre;
-    this.id = window.history.state.id;
+    this.Movie.name = window.history.state.name;
+    this.Movie.genre = window.history.state.genre;
+    this.Movie.id = window.history.state.id;
+    // this.Movie = window.history.state as Movie
   }
 
   onSubmit() {
-    this.store.dispatch(new MovieActions.UpdateMovie({ id: this.id, name: this.name, genre: this.genre }));
+    this.store.dispatch(new MovieActions.UpdateMovie(this.Movie));
     this.router.navigate(['home'])
   }
 

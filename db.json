@@ -1,31 +1,26 @@
 {
   "users": [
     {
-      "id": 1,
       "username": "admin",
-      "password": "admin"
-    },
-    {
-      "id": 2,
-      "username": "ninad",
-      "password": "ninad"
-    },
-    {
-      "id": 7,
-      "username": "john",
-      "password": "wick"
-    },
-    {
-      "id": 98,
-      "username": "adbc",
-      "password": "abcd"
+      "password": "admin",
+      "id": 33
     }
   ],
   "movies": [
     {
-      "id": 42,
-      "name": "The Usual",
-      "genre": "Suspense,Thriller"
+      "id": 1,
+      "name": "The Dark Knight",
+      "genre": "Action,Crime,Drama"
+    },
+    {
+      "id": 2,
+      "name": "The Shawshank Redemption",
+      "genre": "Drama"
+    },
+    {
+      "id": 3,
+      "name": "Fight Club",
+      "genre": "Drama"
     }
   ]
 }

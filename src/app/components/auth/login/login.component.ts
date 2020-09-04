@@ -5,6 +5,7 @@ import { Router } from '@angular/router'
 
 import { Observable } from 'rxjs';
 import * as AuthActions from '../../../actions/auth.actions'
+import { User } from 'src/app/model/User';
 
 @Component({
   selector: 'app-login',
@@ -17,18 +18,15 @@ export class LoginComponent implements OnInit {
   constructor(public store: Store<AppState>, public router: Router) {
     this.isLoggedIn = store.select("auth");
   }
-  username: string;
-  password: string;
+
+  User: User = {} as User;
 
   ngOnInit(): void {
 
   }
 
   Login() {
-    this.store.dispatch(new AuthActions.Login({
-      username: this.username,
-      password: this.password
-    }))
+    this.store.dispatch(new AuthActions.Login(this.User))
 
     this.subscription = this.store.select("auth").subscribe((data) => {
       this.isLoggedIn = data["isLoggedIn"]
