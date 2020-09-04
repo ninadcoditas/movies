@@ -16,7 +16,9 @@ import { UpdateComponent } from './components/movie/update/update.component'
 import { HomeComponent } from './components/home/home.component';
 import { FormsModule } from '@angular/forms';
 import { SignupComponent } from './components/auth/signup/signup.component';
-import { LoginComponent } from './components/auth/login/login.component'
+import { LoginComponent } from './components/auth/login/login.component';
+import { EffectsModule } from '@ngrx/effects'
+import { AuthEffects } from './effects/auth.effects';
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,7 +40,8 @@ import { LoginComponent } from './components/auth/login/login.component'
     StoreModule.forRoot({
       movie: reducer,
       auth: authreducer
-    })
+    }),
+    EffectsModule.forRoot([AuthEffects])
   ],
   providers: [],
   bootstrap: [AppComponent]

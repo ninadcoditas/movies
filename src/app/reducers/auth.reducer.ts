@@ -2,19 +2,27 @@ import { Action, USER_RUNTIME_CHECKS } from '@ngrx/store'
 
 import * as AuthActions from '../actions/auth.actions'
 
+// const initialState = {
+//     isLoggedIn: false,
+//     "users": [
+//         {
+//             "username": "admin",
+//             "password": "admin"
+//         }
+//     ],
+// }
+
+
 const initialState = {
     isLoggedIn: false,
-    "users": [
-        {
-            "username": "admin",
-            "password": "admin"
-        }
-    ],
+    "users": [],
 }
-
 export function authreducer(state = initialState, action) {
     switch (action.type) {
-        case AuthActions.SIGNUP:
+        case AuthActions.LOAD_USERS_SUCCESS:
+            state = { ...state, users: action.payload }
+            return state;
+        case AuthActions.SIGNUP_SUCCESS:
             let newUsers = [...state["users"], action.payload]
             state = { ...state, users: newUsers }
             return state

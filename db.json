@@ -1,8 +1,19 @@
 {
   "users": [
     {
+      "id": 1,
       "username": "admin",
       "password": "admin"
+    },
+    {
+      "id": 2,
+      "username": "ninad",
+      "password": "ninad"
+    },
+    {
+      "id": 7,
+      "username": "john",
+      "password": "wick"
     }
   ],
   "movies": [

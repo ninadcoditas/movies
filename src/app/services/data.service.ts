@@ -17,4 +17,14 @@ export class DataService {
   deleteMovie(id) {
     return this.http.delete(`${this.url}/movies/${id}`)
   }
+
+  getUsers() {
+    return this.http.get(`${this.url}/users`)
+  }
+
+  signUp(data: any) {
+    // debugger;
+    return this.http.post(`${this.url}/users`, data["payload"])
+  }
+
 }

@@ -23,7 +23,9 @@ export class SignupComponent implements OnInit {
   }
 
   SignUp() {
+
     this.store.dispatch(new AuthActions.Signup({
+      id: Math.floor(Math.random() * 100),
       username: this.username,
       password: this.password
     }))
