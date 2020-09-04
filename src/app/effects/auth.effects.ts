@@ -4,7 +4,7 @@ import { Actions, Effect, ofType, createEffect } from '@ngrx/effects';
 
 import { map, switchMap, mergeMap } from 'rxjs/operators'
 
-
+import { ActionType } from '../model/Action'
 
 import * as AuthActions from '../actions/auth.actions';
 import { DataService } from '../services/data.service';
@@ -32,9 +32,9 @@ export class AuthEffects {
 
     @Effect()
     signUp$ = this.actions$.pipe(
-        ofType(AuthActions.SIGNUP),
+        ofType<ActionType>(AuthActions.SIGNUP),
         mergeMap(
-            action => this.dataService.signUp(action).pipe(
+            action => this.dataService.signUp(action.payload).pipe(
                 map(users => (new AuthActions.Signup_Success(users))),
             )
         )

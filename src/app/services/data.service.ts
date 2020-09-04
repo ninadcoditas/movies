@@ -34,9 +34,9 @@ export class DataService {
     return this.http.get(`${this.url}/users`)
   }
 
-  signUp(data: any) {
+  signUp(data: User) {
     // debugger;
-    return this.http.post(`${this.url}/users`, data["payload"])
+    return this.http.post(`${this.url}/users`, data)
   }
 
 }
