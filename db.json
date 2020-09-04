@@ -18,9 +18,9 @@
   ],
   "movies": [
     {
-      "id": 1,
-      "name": "The Dark Knight",
-      "genre": "Action,Crime,Drama"
+      "id": 42,
+      "name": "The Usual",
+      "genre": "Suspense,Thriller"
     }
   ]
 }

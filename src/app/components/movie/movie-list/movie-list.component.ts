@@ -34,7 +34,7 @@ export class MovieListComponent implements OnInit {
   }
 
   deleteMovie(id: number) {
-    this.store.dispatch(new MovieActions.DeleteMovieSuccess(id))
+    this.store.dispatch(new MovieActions.DeleteMovie(id))
   }
 
   updateMovie(movie: Movie) {
