@@ -20,6 +20,8 @@ import { LoginComponent } from './components/auth/login/login.component';
 import { EffectsModule } from '@ngrx/effects'
 import { AuthEffects } from './effects/auth.effects';
 import { MovieEffects } from './effects/movie.effects'
+import { environment } from '../environments/environment';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,11 +40,16 @@ import { MovieEffects } from './effects/movie.effects'
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
+    StoreDevtoolsModule.instrument({
+      maxAge: 25, // Retains last 25 states
+      logOnly: environment.production, // Restrict extension to log-only mode
+    }),
     StoreModule.forRoot({
       movie: reducer,
       auth: authreducer
     }),
-    EffectsModule.forRoot([AuthEffects, MovieEffects])
+    EffectsModule.forRoot([AuthEffects, MovieEffects]),
+    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production })
   ],
   providers: [],
   bootstrap: [AppComponent]

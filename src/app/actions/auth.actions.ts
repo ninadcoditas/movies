@@ -2,10 +2,12 @@ import { Injectable } from '@angular/core'
 import { Action } from '@ngrx/store'
 
 
-export const LOGIN = '[AUTH] Add';
+export const LOGIN = '[AUTH] Login';
 export const LOGOUT = '[AUTH] Logout';
+
 export const SIGNUP = '[AUTH] Signup'
 export const SIGNUP_SUCCESS = '[AUTH] Signup_Success'
+
 export const LOAD_USERS = '[AUTH] Load_Users'
 export const LOAD_USERS_SUCCESS = '[AUTH] Load_Users_Success'
 export class Load_Users implements Action {
