@@ -1,5 +1,7 @@
 isloggedin : {{isLoggedIn }}
 
+
+
 <ng-container *ngIf="isLoggedIn; else elseTemplate">
     <button class="logout button" (click)="Logout()">
         Logout

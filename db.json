@@ -3,7 +3,12 @@
     {
       "username": "admin",
       "password": "admin",
-      "id": 33
+      "id": 1
+    },
+    {
+      "username": "ninad",
+      "password": "ninad",
+      "id": 2
     }
   ],
   "movies": [
@@ -18,9 +23,14 @@
       "genre": "Drama"
     },
     {
-      "id": 3,
       "name": "Fight Club",
-      "genre": "Drama"
+      "genre": "Drama",
+      "id": 3
+    },
+    {
+      "name": "Shutter Island 123",
+      "genre": "Thriller",
+      "id": 4
     }
   ]
 }

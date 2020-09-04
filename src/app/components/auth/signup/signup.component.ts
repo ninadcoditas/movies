@@ -24,7 +24,7 @@ export class SignupComponent implements OnInit {
 
   SignUp() {
 
-    this.User.id = Math.floor(Math.random() * 100);
+    // this.User.id = Math.floor(Math.random() * 100);
     this.store.dispatch(new AuthActions.Signup(this.User))
     this.router.navigate(['/login']);
 

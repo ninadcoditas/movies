@@ -21,7 +21,7 @@ export class AddComponent implements OnInit {
   }
 
   onSubmit() {
-    this.Movie.id = Math.floor(Math.random() * 100)
+    // this.Movie.id = Math.floor(Math.random() * 100)
     this.addMovie(this.Movie)
   }
 
