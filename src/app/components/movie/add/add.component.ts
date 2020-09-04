@@ -17,6 +17,7 @@ export class AddComponent implements OnInit {
   constructor(private store: Store<AppState>, private router: Router) { }
 
   Movie: Movie = {} as Movie;
+  joinedCast: string = "";
   ngOnInit(): void {
   }
 
@@ -26,7 +27,8 @@ export class AddComponent implements OnInit {
   }
 
   addMovie(movieObj: Movie) {
-    this.Movie.rating = parseInt(this.Movie.rating.toString())
+    this.Movie.rating = parseFloat(this.Movie.rating.toString())
+    this.Movie.cast = this.joinedCast.split(";").filter((x) => x.trim() != "")
     this.store.dispatch(new MovieActions.AddMovie(movieObj));
     this.router.navigate(['home'])
   }

@@ -1,14 +1,21 @@
 <div>
-    <div>
+    <div class="info">
         Name: {{this.movie.name}}
     </div>
 
-    <div>
+    <div class="info">
         Genre: {{this.movie.genre}}
     </div>
 
-    <div>
+    <div class="info">
         <movie-rating>{{this.movie.rating}}</movie-rating>
+    </div>
+
+    <div class="info">
+        <div>Cast:</div>
+        <movie-cast>
+            <li slot="name" *ngFor="let member of movie.cast">{{member}}</li>
+        </movie-cast>
     </div>
 
 </div>

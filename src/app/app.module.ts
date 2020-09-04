@@ -29,6 +29,9 @@ import { environment } from '../environments/environment';
 
 import { Rating } from './custom-components/Rating';
 customElements.define('movie-rating', Rating);
+
+import { Cast } from './custom-components/Cast';
+customElements.define('movie-cast', Cast);
 @NgModule({
   declarations: [
     AppComponent,

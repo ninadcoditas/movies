@@ -3,4 +3,5 @@ export class Movie {
     name: string;
     genre: string;
     rating: number;
+    cast: Array<string>
 }
