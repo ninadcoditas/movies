@@ -17,12 +17,8 @@ export class UpdateComponent implements OnInit {
 
   Movie: Movie = {} as Movie;
   ngOnInit(): void {
-
-    console.log('data rec is ', window.history.state.name)
-    this.Movie.name = window.history.state.name;
-    this.Movie.genre = window.history.state.genre;
-    this.Movie.id = window.history.state.id;
-    // this.Movie = window.history.state as Movie
+    console.log('Movie name is ', window.history.state.name)
+    this.Movie = window.history.state
   }
 
   onSubmit() {

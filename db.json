@@ -20,7 +20,8 @@
     {
       "id": 2,
       "name": "The Shawshank Redemption",
-      "genre": "Drama"
+      "genre": "Drama  ",
+      "navigationId": 4
     },
     {
       "name": "Fight Club",
