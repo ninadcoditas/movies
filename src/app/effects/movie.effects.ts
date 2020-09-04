@@ -5,6 +5,7 @@ import { Actions, Effect, ofType, createEffect } from '@ngrx/effects';
 import { map, switchMap, mergeMap } from 'rxjs/operators'
 
 import * as AuthActions from '../actions/auth.actions';
+import * as MovieActions from '../actions/movie.actions';
 import { DataService } from '../services/data.service';
 import { Observable } from 'rxjs';
 
@@ -18,25 +19,24 @@ export class MovieEffects {
     ) { }
 
     @Effect()
-    loadUsers$ = this.actions$.pipe(
-        ofType(AuthActions.LOAD_USERS),
+    loadMovie$ = this.actions$.pipe(
+        ofType(MovieActions.LOAD_MOVIE),
         mergeMap(
-            action => this.dataService.getUsers().pipe(
-                map(users => (new AuthActions.Load_Users_Success(users))),
-
+            action => this.dataService.getMovies().pipe(
+                map(movies => (new MovieActions.LoadMovieSucess(movies)))
             )
         )
     )
 
-    @Effect()
-    signUp$ = this.actions$.pipe(
-        ofType(AuthActions.SIGNUP),
-        mergeMap(
-            action => this.dataService.signUp(action).pipe(
-                map(users => (new AuthActions.Signup_Success(users))),
-            )
-        )
-    )
+    // @Effect()
+    // deleteMovie$ = this.actions$.pipe(
+    //     ofType(MovieActions.DELETE_MOVIE),
+    //     mergeMap(
+    //         action => this.dataService.deleteMovie(action).pipe(
+    //             map(users => (new MovieActions.DeleteMovieSuccess(action))),
+    //         )
+    //     )
+    // )
 
 }
 

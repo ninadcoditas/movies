@@ -30,10 +30,11 @@ export class MovieListComponent implements OnInit {
     this.subscription = this.store.select("auth").subscribe((data) => {
       this.isLoggedIn = data["isLoggedIn"]
     });
+    this.store.dispatch(new MovieActions.LoadMovie())
   }
 
   deleteMovie(id: number) {
-    this.store.dispatch(new MovieActions.DeleteMovie(id))
+    this.store.dispatch(new MovieActions.DeleteMovieSuccess(id))
   }
 
   updateMovie(movie: Movie) {

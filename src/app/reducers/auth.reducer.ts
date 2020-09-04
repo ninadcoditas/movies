@@ -14,7 +14,7 @@ import * as AuthActions from '../actions/auth.actions'
 
 
 const initialState = {
-    isLoggedIn: false,
+    isLoggedIn: true,
     "users": [],
 }
 export function authreducer(state = initialState, action) {
