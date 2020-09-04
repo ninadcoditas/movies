@@ -26,6 +26,7 @@ export class AddComponent implements OnInit {
   }
 
   addMovie(movieObj: Movie) {
+    this.Movie.rating = parseInt(this.Movie.rating.toString())
     this.store.dispatch(new MovieActions.AddMovie(movieObj));
     this.router.navigate(['home'])
   }

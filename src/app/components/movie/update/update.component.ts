@@ -22,6 +22,7 @@ export class UpdateComponent implements OnInit {
   }
 
   onSubmit() {
+    this.Movie.rating = parseInt(this.Movie.rating.toString())
     this.store.dispatch(new MovieActions.UpdateMovie(this.Movie));
     this.router.navigate(['home'])
   }

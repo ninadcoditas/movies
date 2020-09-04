@@ -16,8 +16,8 @@
       "id": 1,
       "name": "The Dark Knight",
       "genre": "Action,Crime,Drama",
-      "navigationId": 6,
-      "rating": 8
+      "navigationId": 4,
+      "rating": 10
     },
     {
       "id": 2,
@@ -37,7 +37,7 @@
       "genre": "Thriller",
       "id": 4,
       "navigationId": 6,
-      "rating": 8
+      "rating": 5
     },
     {
       "name": "The Godfather",
