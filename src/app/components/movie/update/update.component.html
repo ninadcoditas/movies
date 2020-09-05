@@ -1,7 +1,8 @@
 <div class="container">
-    <h2>Update Movie details</h2>
-
     <form (ngSubmit)="onSubmit()">
+        <div class="info">
+            <h2>Update Movie details</h2>
+        </div>
         <div class="info">
             <label htmlFor="name">
                 Name
@@ -28,7 +29,9 @@
             </label>
             <input type="text" name="cast" id="" [(ngModel)]="joinedCast" required>
         </div>
+        <div class="info">
+            <input type="submit" value="Update Movie" class="button updateMovie">
 
-        <input type="submit" value="Update Movie" class="button updateMovie">
+        </div>
     </form>
 </div>

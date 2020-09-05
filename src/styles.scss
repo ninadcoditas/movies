@@ -1,38 +1,101 @@
 /* You can add global styles to this file, and also import other style files */
 
+$dark: #212121;
+$input-border-radius: 4px;
+$input-border-width: .063rem;
+$input-border-color: #b0bec5;
+$input-padding: .75rem .875rem;
+$input-submit-bg: #007BFF;
+$input-submit-bg-hover: lighten($input-submit-bg, 5%);
+$input-submit-padding: .75rem 1.5rem;
+$body-bg: #eceff1;
+
+
+
 .button{
     padding:10px;
-     color: white;
+    color: white;
     border:1px solid;
     cursor:pointer;
-}
-
-.addMovie,.updateMovie,.login{
+    margin:10px 0px;
+    &.updateMovie{
+        background:#17A2B8;
+    }
     
-    background: green;
+    &.login,&.addMovie{
+        background: #218838;
+    }
+    &.logout{
+        background: #DC3545;
+    }
+    &.signup{
+        background: #80DEEA;
+    }
+    &.ml-10{
+         margin-left: 10px;
+    }
 }
-
-.logout{
-    background: red;
-}
-
-.signup{
-    background: #80DEEA;
-}
-
-// .addMovie,.updateMovie,.login{
-//     color: white;
-//     background: green;
-//     border: 1px solid;
-//     padding: 10px;
-// }
 
 .info{
     margin:10px;
+    line-height: 2.2;
 }
 
 .container{
-    width: 50vw;
+    width: 60vw;
     margin: 0 auto;
+
 }
+
+form{
+  margin: 0 2rem 1rem;
+  
+  label {
+    display: block;
+    margin: 0 0 .5rem;
+    font-weight: 700;
+    letter-spacing: .2px;
+    font-size: .875rem;
+    color: $dark;
+    
+    &.inline {
+      display: inline-block;
+      width: 100px;
+    }
+    
+    &.inline.right {
+      text-align: right;
+      padding-right: .5rem;
+    }
+  }
+}
+
+input {
+  padding: $input-padding;
+  border-radius: $input-border-radius;
+  outline: 0;
+  color: $dark;
+  font-size: .875rem;
+  width: 100%;
+  border: $input-border-width solid $input-border-color;
+ 
+  
+}
+
+input[type="submit"] ,.button{
+  padding: $input-submit-padding;
+  // margin: .5rem 0 0;
+  outline: 0;
+  border: 0;
+  background: $input-submit-bg;
+  border-radius: $input-border-radius;
+  color: #FFF;
+  font-weight: 700;
+  font-size: .875rem;
+  letter-spacing: .25px;
+  transition: background .3s ease;
+   width: auto;
+
+}
+
 
