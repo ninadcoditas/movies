@@ -1,6 +1,6 @@
 <div class="container">
 
-    <form (ngSubmit)="Login()">
+    <form (ngSubmit)="Login()" ngNativeValidate>
         <div class="info">
             <h2>Login Form</h2>
 
@@ -17,7 +17,7 @@
             <label htmlFor="password">
                 Password
             </label>
-            <input type="password" name="password" id="" required [(ngModel)]="User.password">
+            <input type="password" name="password" id="" required [(ngModel)]="User.password" required>
         </div>
 
         <div class="info">

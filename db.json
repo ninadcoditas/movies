@@ -4,20 +4,25 @@
       "username": "admin",
       "password": "admin",
       "id": 1
+    },
+    {
+      "username": "admin",
+      "password": "admin1234",
+      "id": 2
     }
   ],
   "movies": [
     {
       "name": "The Dark Knight",
       "genre": "Action,Crime,Drama",
-      "rating": 9.1,
+      "rating": 9.3,
       "cast": [
         "Christian Bale",
         "Heath Ledger",
         "Morgan Freeman"
       ],
       "id": 1,
-      "navigationId": 8
+      "navigationId": 4
     },
     {
       "name": "The Shawshank Redemption ",
