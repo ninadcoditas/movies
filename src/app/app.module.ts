@@ -25,7 +25,7 @@ import { EffectsModule } from '@ngrx/effects'
 import { AuthEffects } from './effects/auth.effects';
 import { MovieEffects } from './effects/movie.effects'
 import { environment } from '../environments/environment';
-
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 import { Rating } from './custom-components/Rating';
 customElements.define('movie-rating', Rating);
@@ -59,7 +59,8 @@ customElements.define('movie-cast', Cast);
       auth: authreducer
     }),
     EffectsModule.forRoot([AuthEffects, MovieEffects]),
-    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production })
+    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
+    FontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent],

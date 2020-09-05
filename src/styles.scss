@@ -11,6 +11,37 @@ $input-submit-padding: .75rem 1.5rem;
 $body-bg: #eceff1;
 
 
+// themes
+:root {
+  /* Colors */
+  --foreground-default: #08090a;
+  --foreground-secondary: #41474d;
+  --foreground-tertiary: #797c80;
+  --foreground-quaternary: #f4faff;
+  --foreground-light: #41474d;
+
+  --background-default: #f4faff;
+  --background-secondary: #a3b9cc;
+  --background-tertiary: #5c7d99;
+  --background-light: #ffffff;
+
+  --primary-default: #5dfdcb;
+  --primary-dark: #24b286;
+  --primary-light: #b2ffe7;
+
+  --error-default: #ef3e36;
+  --error-dark: #800600;
+  --error-light: #ffcecc;
+  /* Shadows */
+  --background-tertiary-shadow: 0 1px 3px 0 rgba(92, 125, 153, 0.5);
+
+  --text-color:black;
+  --body-background: "#FFFFFF";
+  --signup:#3277B3;
+  --list-background:#E2E4E9;
+  --card-background:#FFFFFF
+
+}
 
 .button{
     padding:10px;
@@ -23,13 +54,13 @@ $body-bg: #eceff1;
     }
     
     &.login,&.addMovie{
-        background: #218838;
+       background:var(--primary-dark);
     }
     &.logout{
-        background: #DC3545;
+        background:var(--error-default);
     }
     &.signup{
-        background: #80DEEA;
+        background:var(--signup);
     }
     
 }
@@ -45,6 +76,9 @@ $body-bg: #eceff1;
     width: 60vw;
     margin: 0 auto;
 
+    h2,label,div{
+      color:var(--text-color);
+    }
 }
 
 form{
@@ -78,8 +112,6 @@ input {
   font-size: .875rem;
   width: 100%;
   border: $input-border-width solid $input-border-color;
- 
-  
 }
 
 input[type="submit"] ,.button{
@@ -87,7 +119,7 @@ input[type="submit"] ,.button{
   // margin: .5rem 0 0;
   outline: 0;
   border: 0;
-  background: $input-submit-bg;
+  // background: $input-submit-bg;
   border-radius: $input-border-radius;
   color: #FFF;
   font-weight: 700;
@@ -105,6 +137,9 @@ input[type="submit"] ,.button{
   align-items: center;
 }
 
+body{
+  background: var(--body-background);
+}
 
 @media only screen and (max-width: 600px) {
   .container {
