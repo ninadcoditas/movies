@@ -31,7 +31,8 @@ export const light: Theme = {
         "--body-background": "#FFFFFF",
         "--signup": "#3277B3",
         "--list-background": "#E2E4E9",
-        "--card-background": "#FFFFFF"
+        "--card-background": "#FFFFFF",
+        "--theme": "#3277B3"
     }
 };
 

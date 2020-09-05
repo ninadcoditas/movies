@@ -5,8 +5,18 @@
                 <movie-card [movie]="movie"></movie-card>
             </div>
             <div *ngIf="this.isLoggedIn">
-                <img src="assets/image/update.png" (click)=updateMovie(movie)>
-                <img src="assets/image/delete.png" (click)="deleteMovie(movie.id)" class="ml-10">
+                <!-- <img src="assets/image/update.png" (click)=updateMovie(movie)> -->
+
+                <span (click)=updateMovie(movie)>
+                    <fa-icon [icon]="faEdit"></fa-icon>
+                </span>
+
+                <!-- <img src="assets/image/delete.png" (click)="deleteMovie(movie.id)" class="ml-10"> -->
+
+                <span class="ml-10" (click)="deleteMovie(movie.id)">
+                    <fa-icon [icon]="faTrash"></fa-icon>
+
+                </span>
             </div>
         </div>
     </ng-container>

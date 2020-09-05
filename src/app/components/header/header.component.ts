@@ -7,10 +7,16 @@ import * as AuthActions from '../../actions/auth.actions'
 import {
   faLightbulb as faSolidLightbulb,
   faDollarSign,
-  IconDefinition
+  IconDefinition,
+  faEdit as faSolidEdit,
+  faTrash as faSolidTrash
 } from "@fortawesome/free-solid-svg-icons";
 
-import { faLightbulb as faRegularLightbulb } from '@fortawesome/free-solid-svg-icons';
+import {
+  faLightbulb as faRegularLightbulb,
+  faEdit as faRegularEdit,
+  faTrash as faRegularTrash
+} from '@fortawesome/free-solid-svg-icons';
 
 import { ThemeService } from '../../services/theme.service'
 @Component({
@@ -23,8 +29,12 @@ export class HeaderComponent implements OnInit {
   isLoggedIn: Observable<boolean>;
   subscription;
 
+  faEdit: IconDefinition;
   faLightbulb: IconDefinition;
+  faTrash: IconDefinition;
   faDollarSign = faDollarSign;
+  isDark: boolean
+
   constructor(public store: Store<AppState>, public themeService: ThemeService) {
     this.subscription = store.select("auth").subscribe((data) => {
       this.isLoggedIn = data["isLoggedIn"]
@@ -32,10 +42,17 @@ export class HeaderComponent implements OnInit {
 
   }
 
+
   ngOnInit(): void {
     this.store.dispatch(new AuthActions.Load_Users())
     this.setLightbulb();
   }
+
+  // ngOnChanges() {
+  //   this.isDark = this.themeService.isDarkTheme()
+
+  // }
+
   Logout() {
     this.store.dispatch(new AuthActions.Logout())
     this.subscription = this.store.select("auth").subscribe((data) => {
@@ -43,11 +60,7 @@ export class HeaderComponent implements OnInit {
     });
   }
 
-  ngOnDestroy(): void {
-    //Called once, before the instance is destroyed.
-    //Add 'implements OnDestroy' to the class.
-    this.subscription.unsubscribe();
-  }
+
 
   toggleTheme() {
     if (this.themeService.isDarkTheme()) {
@@ -61,11 +74,21 @@ export class HeaderComponent implements OnInit {
 
   setLightbulb() {
     if (this.themeService.isDarkTheme()) {
+      this.faEdit = faRegularEdit;
+      this.faTrash = faRegularTrash;
+
       this.faLightbulb = faRegularLightbulb;
     } else {
+      this.faEdit = faSolidEdit;
+      this.faTrash = faSolidTrash;
       this.faLightbulb = faSolidLightbulb;
     }
   }
 
+  ngOnDestroy(): void {
+    //Called once, before the instance is destroyed.
+    //Add 'implements OnDestroy' to the class.
+    this.subscription.unsubscribe();
+  }
 
 }
