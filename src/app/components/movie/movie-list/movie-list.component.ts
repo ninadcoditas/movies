@@ -38,9 +38,9 @@ export class MovieListComponent implements OnInit {
   isLoggedIn: Observable<any>;
 
   faEdit: IconDefinition = faEdit;
-  faLightbulb: IconDefinition;
+  // faLightbulb: IconDefinition;
   faTrash: IconDefinition = faTrash;
-  faDollarSign = faDollarSign;
+  // faDollarSign = faDollarSign;
 
   subscription
   constructor(
@@ -89,11 +89,11 @@ export class MovieListComponent implements OnInit {
     if (this.themeService.isDarkTheme()) {
       this.faEdit = faRegularEdit;
       this.faTrash = faRegularTrash;
-      this.faLightbulb = faRegularLightbulb;
+      // this.faLightbulb = faRegularLightbulb;
     } else {
       this.faEdit = faSolidEdit;
       this.faTrash = faSolidTrash;
-      this.faLightbulb = faSolidLightbulb;
+      // this.faLightbulb = faSolidLightbulb;
     }
   }
 
