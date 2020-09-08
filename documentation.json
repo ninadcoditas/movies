@@ -2158,9 +2158,34 @@
             "viewProviders": [],
             "inputsClass": [
                 {
-                    "name": "movie",
+                    "name": "id",
                     "line": 11,
-                    "type": "Movie"
+                    "description": "<p>Unique id of movie</p>\n",
+                    "type": "number"
+                },
+                {
+                    "name": "name",
+                    "line": 11,
+                    "description": "<p>Name of movie</p>\n",
+                    "type": "string"
+                },
+                {
+                    "name": "genre",
+                    "line": 11,
+                    "description": "<p>Genre of movie</p>\n",
+                    "type": "string"
+                },
+                {
+                    "name": "rating",
+                    "line": 11,
+                    "description": "<p>Rating of movie</p>\n",
+                    "type": "number"
+                },
+                {
+                    "name": "cast",
+                    "line": 11,
+                    "description": "<p>Cast of movie</p>\n",
+                    "type": "string"
                 }
             ],
             "outputsClass": [],
