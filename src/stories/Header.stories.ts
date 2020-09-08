@@ -3,8 +3,7 @@ import { CommonModule } from '@angular/common';
 // also exported from '@storybook/angular' if you can deal with breaking changes in 6.1
 import { Story, Meta } from '@storybook/angular/types-6-0';
 
-import Button from './button.component';
-import { HeaderComponent } from '../app/components/header/header.component'
+import { HeaderComponent } from './components'
 import { ThemeService } from '../app/services/theme.service'
 import { StoreModule } from '@ngrx/store';
 import { authreducer } from '../app/reducers/auth.reducer'
@@ -14,7 +13,7 @@ export default {
   component: HeaderComponent,
   decorators: [
     moduleMetadata({
-      declarations: [Button],
+      declarations: [],
       imports: [CommonModule,
         StoreModule.forRoot({
           auth: authreducer

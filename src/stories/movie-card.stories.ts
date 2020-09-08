@@ -8,6 +8,7 @@ import { Cast } from '../app/custom-components/Cast';
 customElements.define('movie-cast', Cast);
 
 import { moduleMetadata } from '@storybook/angular';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 
 export default {
@@ -28,6 +29,7 @@ export default {
         moduleMetadata({
             declarations: [Rating, Cast],
             imports: [],
+            schemas: [CUSTOM_ELEMENTS_SCHEMA]
         }),
     ],
 } as unknown as Meta;

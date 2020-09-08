@@ -1107,38 +1107,31 @@
             "sourceCode": "export class Movie {\r\n    id: number;\r\n    name: string;\r\n    genre: string;\r\n    rating: number;\r\n    cast: Array<string>\r\n}",
             "properties": [
                 {
-                    "name": "cast",
+                    "name": "Cast",
                     "type": "Array<string>",
                     "optional": false,
-                    "description": "",
+                    "description": "Cast of Movie",
                     "line": 6
                 },
                 {
-                    "name": "genre",
+                    "name": "Genre",
                     "type": "string",
                     "optional": false,
-                    "description": "",
+                    "description": "Genre of Movie",
                     "line": 4
                 },
                 {
-                    "name": "id",
-                    "type": "number",
-                    "optional": false,
-                    "description": "",
-                    "line": 2
-                },
-                {
-                    "name": "name",
+                    "name": "Name",
                     "type": "string",
                     "optional": false,
-                    "description": "",
+                    "description": "Name of Movie",
                     "line": 3
                 },
                 {
-                    "name": "rating",
+                    "name": "Rating",
                     "type": "number",
                     "optional": false,
-                    "description": "",
+                    "description": "Rating of Movie",
                     "line": 5
                 }
             ],
@@ -1474,24 +1467,7 @@
             "viewProviders": [],
             "inputsClass": [],
             "outputsClass": [],
-            "propertiesClass": [
-                {
-                    "name": "joinedCast",
-                    "defaultValue": "\"\"",
-                    "type": "string",
-                    "optional": false,
-                    "description": "",
-                    "line": 20
-                },
-                {
-                    "name": "Movie",
-                    "defaultValue": "{} as Movie",
-                    "type": "Movie",
-                    "optional": false,
-                    "description": "",
-                    "line": 19
-                }
-            ],
+            "propertiesClass": [],
             "methodsClass": [
                 {
                     "name": "addMovie",
@@ -1501,9 +1477,8 @@
                             "type": "Movie"
                         }
                     ],
+                    "description": "Submits the form data and redirects to home",
                     "optional": false,
-                    "returnType": "void",
-                    "typeParameters": [],
                     "line": 29,
                     "jsdoctags": [
                         {
@@ -1519,17 +1494,8 @@
                     "name": "ngOnInit",
                     "args": [],
                     "optional": false,
-                    "returnType": "void",
-                    "typeParameters": [],
-                    "line": 21
-                },
-                {
-                    "name": "onSubmit",
-                    "args": [],
-                    "optional": false,
-                    "returnType": "void",
-                    "typeParameters": [],
-                    "line": 24
+                    "line": 21,
+                    "description": "Initalises the Add Movie form"
                 }
             ],
             "hostBindings": [],
@@ -2150,34 +2116,32 @@
             "viewProviders": [],
             "inputsClass": [
                 {
-                    "name": "id",
-                    "line": 11,
-                    "description": "<p>Unique id of movie</p>\n",
-                    "type": "number"
+                    "name": "Cast",
+                    "type": "Array<string>",
+                    "optional": false,
+                    "description": "Cast of Movie",
+                    "line": 6
                 },
                 {
-                    "name": "name",
-                    "line": 11,
-                    "description": "<p>Name of movie</p>\n",
-                    "type": "string"
+                    "name": "Genre",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Genre of Movie",
+                    "line": 4
                 },
                 {
-                    "name": "genre",
-                    "line": 11,
-                    "description": "<p>Genre of movie</p>\n",
-                    "type": "string"
+                    "name": "Name",
+                    "type": "string",
+                    "optional": false,
+                    "description": "Name of Movie",
+                    "line": 3
                 },
                 {
-                    "name": "rating",
-                    "line": 11,
-                    "description": "<p>Rating of movie</p>\n",
-                    "type": "number"
-                },
-                {
-                    "name": "cast",
-                    "line": 11,
-                    "description": "<p>Cast of movie</p>\n",
-                    "type": "string"
+                    "name": "Rating",
+                    "type": "number",
+                    "optional": false,
+                    "description": "Rating of Movie",
+                    "line": 5
                 }
             ],
             "outputsClass": [],
