@@ -6,6 +6,8 @@ import { Story, Meta } from '@storybook/angular/types-6-0';
 import Button from './button.component';
 import { HeaderComponent } from '../app/components/header/header.component'
 import { ThemeService } from '../app/services/theme.service'
+import { StoreModule } from '@ngrx/store';
+import { authreducer } from '../app/reducers/auth.reducer'
 
 export default {
   title: 'Example/Header',
@@ -13,7 +15,10 @@ export default {
   decorators: [
     moduleMetadata({
       declarations: [Button],
-      imports: [CommonModule],
+      imports: [CommonModule,
+        StoreModule.forRoot({
+          auth: authreducer
+        })],
       providers: [ThemeService]
     }),
   ],
@@ -36,5 +41,5 @@ LoggedIn.args = {
 
 export const LoggedOut = Template.bind({});
 LoggedOut.args = {
-  isLoggedIn: true
+  isLoggedIn: false
 };

@@ -1822,7 +1822,7 @@
                 },
                 {
                     "name": "isLoggedIn",
-                    "type": "Observable<boolean>",
+                    "type": "boolean",
                     "optional": false,
                     "description": "",
                     "line": 29
