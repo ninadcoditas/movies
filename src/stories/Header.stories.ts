@@ -4,28 +4,37 @@ import { CommonModule } from '@angular/common';
 import { Story, Meta } from '@storybook/angular/types-6-0';
 
 import Button from './button.component';
-import Header from './header.component';
+import { HeaderComponent } from '../app/components/header/header.component'
+import { ThemeService } from '../app/services/theme.service'
 
 export default {
   title: 'Example/Header',
-  component: Header,
+  component: HeaderComponent,
   decorators: [
     moduleMetadata({
       declarations: [Button],
       imports: [CommonModule],
+      providers: [ThemeService]
     }),
   ],
-} as Meta;
+  argTypes: {
+    isLoggedIn: false
+  },
+} as unknown as Meta;
 
-const Template: Story<Header> = (args: Header) => ({
-  component: Header,
+const Template: Story<HeaderComponent> = (args: HeaderComponent) => ({
+  component: HeaderComponent,
   props: args,
 });
 
 export const LoggedIn = Template.bind({});
 LoggedIn.args = {
-  user: {},
+  user: {
+    isLoggedIn: true
+  },
 };
 
 export const LoggedOut = Template.bind({});
-LoggedOut.args = {};
+LoggedOut.args = {
+  isLoggedIn: true
+};

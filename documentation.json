@@ -133,7 +133,7 @@
         },
         {
             "name": "DataService",
-            "id": "injectable-DataService-b9c4c5429513aedf7072ef4c4242a930",
+            "id": "injectable-DataService-ce4dd3ab81b14e73b684a571a5d8edc7",
             "file": "src/app/services/data.service.ts",
             "properties": [
                 {
@@ -252,7 +252,7 @@
                 }
             ],
             "description": "",
-            "sourceCode": "import { Injectable } from '@angular/core';\nimport { HttpClient } from '@angular/common/http';\n\nimport { Movie } from '../model/Movie';\nimport { User } from '../model/User'\n@Injectable({\n  providedIn: 'root'\n})\nexport class DataService {\n\n  constructor(private http: HttpClient) { }\n\n  url = \"http://localhost:3000\"\n\n  getMovies() {\n    // console.log(this.url)\n    return this.http.get(`${this.url}/movies`)\n  }\n\n  updateMovie(data: Movie) {\n    // console.log(data)\n    return this.http.put(`${this.url}/movies/${data.id}`, data)\n  }\n\n  deleteMovie(id: number) {\n    return this.http.delete(`${this.url}/movies/${id}`)\n  }\n\n  addMovie(data: Movie) {\n    return this.http.post(`${this.url}/movies`, data)\n  }\n\n  getUsers() {\n    return this.http.get(`${this.url}/users`)\n  }\n\n  signUp(data: User) {\n    // debugger;\n    return this.http.post(`${this.url}/users`, data)\n  }\n\n}\n",
+            "sourceCode": "import { Injectable } from '@angular/core';\r\nimport { HttpClient } from '@angular/common/http';\r\n\r\nimport { Movie } from '../model/Movie';\r\nimport { User } from '../model/User'\r\n@Injectable({\r\n  providedIn: 'root'\r\n})\r\nexport class DataService {\r\n\r\n  constructor(private http: HttpClient) { }\r\n\r\n  url = \"http://localhost:3000\"\r\n\r\n  getMovies() {\r\n    // console.log(this.url)\r\n    return this.http.get(`${this.url}/movies`)\r\n  }\r\n\r\n  updateMovie(data: Movie) {\r\n    // console.log(data)\r\n    return this.http.put(`${this.url}/movies/${data.id}`, data)\r\n  }\r\n\r\n  deleteMovie(id: number) {\r\n    return this.http.delete(`${this.url}/movies/${id}`)\r\n  }\r\n\r\n  addMovie(data: Movie) {\r\n    return this.http.post(`${this.url}/movies`, data)\r\n  }\r\n\r\n  getUsers() {\r\n    return this.http.get(`${this.url}/users`)\r\n  }\r\n\r\n  signUp(data: User) {\r\n    // debugger;\r\n    return this.http.post(`${this.url}/users`, data)\r\n  }\r\n\r\n}\r\n",
             "constructorObj": {
                 "name": "constructor",
                 "description": "",
@@ -375,7 +375,7 @@
         },
         {
             "name": "ThemeService",
-            "id": "injectable-ThemeService-e2f550822766d56d7c359102d9b40f96",
+            "id": "injectable-ThemeService-41ff9adbeb84acc4dd11b4a7f944de60",
             "file": "src/app/services/theme.service.ts",
             "properties": [
                 {
@@ -466,7 +466,7 @@
                 }
             ],
             "description": "",
-            "sourceCode": "import { Injectable } from \"@angular/core\";\nimport { Theme, light, dark } from \"../theme/theme\";\n\n@Injectable({\n  providedIn: \"root\"\n})\nexport class ThemeService {\n  private active: Theme = light;\n  private availableThemes: Theme[] = [light, dark];\n\n  getAvailableThemes(): Theme[] {\n    return this.availableThemes;\n  }\n\n  getActiveTheme(): Theme {\n    return this.active;\n  }\n\n  isDarkTheme(): boolean {\n    return this.active.name === dark.name;\n  }\n\n  setDarkTheme(): void {\n    this.setActiveTheme(dark);\n  }\n\n  setLightTheme(): void {\n    this.setActiveTheme(light);\n  }\n\n  setActiveTheme(theme: Theme): void {\n    this.active = theme;\n\n    Object.keys(this.active.properties).forEach(property => {\n      document.documentElement.style.setProperty(\n        property,\n        this.active.properties[property]\n      );\n    });\n  }\n}",
+            "sourceCode": "import { Injectable } from \"@angular/core\";\r\nimport { Theme, light, dark } from \"../theme/theme\";\r\n\r\n@Injectable({\r\n  providedIn: \"root\"\r\n})\r\nexport class ThemeService {\r\n  private active: Theme = light;\r\n  private availableThemes: Theme[] = [light, dark];\r\n\r\n  getAvailableThemes(): Theme[] {\r\n    return this.availableThemes;\r\n  }\r\n\r\n  getActiveTheme(): Theme {\r\n    return this.active;\r\n  }\r\n\r\n  isDarkTheme(): boolean {\r\n    return this.active.name === dark.name;\r\n  }\r\n\r\n  setDarkTheme(): void {\r\n    this.setActiveTheme(dark);\r\n  }\r\n\r\n  setLightTheme(): void {\r\n    this.setActiveTheme(light);\r\n  }\r\n\r\n  setActiveTheme(theme: Theme): void {\r\n    this.active = theme;\r\n\r\n    Object.keys(this.active.properties).forEach(property => {\r\n      document.documentElement.style.setProperty(\r\n        property,\r\n        this.active.properties[property]\r\n      );\r\n    });\r\n  }\r\n}",
             "type": "injectable"
         }
     ],
@@ -620,10 +620,10 @@
         },
         {
             "name": "AppPage",
-            "id": "class-AppPage-a0db91bfa3b9914e9048612074084ee6",
+            "id": "class-AppPage-b0dda38f970a6690b77b35dfb293b3ac",
             "file": "e2e/src/app.po.ts",
             "type": "class",
-            "sourceCode": "import { browser, by, element } from 'protractor';\n\nexport class AppPage {\n  navigateTo(): Promise<unknown> {\n    return browser.get(browser.baseUrl) as Promise<unknown>;\n  }\n\n  getTitleText(): Promise<string> {\n    return element(by.css('app-root .content span')).getText() as Promise<string>;\n  }\n}\n",
+            "sourceCode": "import { browser, by, element } from 'protractor';\r\n\r\nexport class AppPage {\r\n  navigateTo(): Promise<unknown> {\r\n    return browser.get(browser.baseUrl) as Promise<unknown>;\r\n  }\r\n\r\n  getTitleText(): Promise<string> {\r\n    return element(by.css('app-root .content span')).getText() as Promise<string>;\r\n  }\r\n}\r\n",
             "properties": [],
             "methods": [
                 {
@@ -1150,6 +1150,36 @@
             "hostListeners": []
         },
         {
+            "name": "Rating",
+            "id": "class-Rating-ef2eafadc7ca629ebdf8b7630163ebee",
+            "file": "src/app/custom-components/Rating.ts",
+            "type": "class",
+            "sourceCode": "import { LitElement, html } from 'lit-element';\r\n\r\n// Extend the LitElement base class\r\n// export the class, so it can be imported where it is needed\r\nexport class Rating extends LitElement {\r\n    constructor() {\r\n        super();\r\n        // console.log('called from rate component')\r\n    }\r\n\r\n    render() {\r\n\r\n        //     let score = this.getAttribute(\"score\")\r\n        //     return html`\r\n        //     <span>\r\n        //        Rating: ${score} / 10\r\n        //     </span>\r\n        // `;\r\n\r\n        return html`\r\n        <span>\r\n           Rating: <slot></slot> / 10\r\n        </span>\r\n        `\r\n    }\r\n}",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "args": [],
+                "line": 5
+            },
+            "properties": [],
+            "methods": [
+                {
+                    "name": "render",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "any",
+                    "typeParameters": [],
+                    "line": 11
+                }
+            ],
+            "indexSignatures": [],
+            "extends": "LitElement",
+            "inputsClass": [],
+            "outputsClass": [],
+            "hostBindings": [],
+            "hostListeners": []
+        },
+        {
             "name": "Signup",
             "id": "class-Signup-54ff7d0ad8ee0b5dfe66c8edfa17dcb2",
             "file": "src/app/actions/auth.actions.ts",
@@ -1554,7 +1584,7 @@
         },
         {
             "name": "AppComponent",
-            "id": "component-AppComponent-6e4bcdedc22a5b789549f37f1eab319b",
+            "id": "component-AppComponent-194c0adc315a44b0c74e4ed631f7278c",
             "file": "src/app/app.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -1579,7 +1609,7 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\nimport { Movie } from './model/Movie';\n@Component({\n  selector: 'app-root',\n  templateUrl: './app.component.html',\n  styleUrls: ['./app.component.scss']\n})\nexport class AppComponent {\n\n}\n",
+            "sourceCode": "import { Component } from '@angular/core';\r\nimport { Movie } from './model/Movie';\r\n@Component({\r\n  selector: 'app-root',\r\n  templateUrl: './app.component.html',\r\n  styleUrls: ['./app.component.scss']\r\n})\r\nexport class AppComponent {\r\n\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -1592,7 +1622,7 @@
         },
         {
             "name": "ButtonComponent",
-            "id": "component-ButtonComponent-642c6c4e474cd5a0ac760dfda26b2fc9",
+            "id": "component-ButtonComponent-44f2f1e1b3a1e0ebc1e0edafd90d05c0",
             "file": "src/stories/button.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -1650,11 +1680,11 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import { Component, Input, Output, EventEmitter } from '@angular/core';\n\n@Component({\n  selector: 'storybook-button',\n  template: ` <button\n    type=\"button\"\n    (click)=\"onClick.emit($event)\"\n    [ngClass]=\"classes\"\n    [ngStyle]=\"{ 'background-color': backgroundColor }\"\n  >\n    {{ label }}\n  </button>`,\n  styleUrls: ['./button.css'],\n})\nexport default class ButtonComponent {\n  /**\n   * Is this the principal call to action on the page?\n   */\n  @Input()\n  primary = false;\n\n  /**\n   * What background color to use\n   */\n  @Input()\n  backgroundColor?: string;\n\n  /**\n   * How large should the button be?\n   */\n  @Input()\n  size: 'small' | 'medium' | 'large' = 'medium';\n\n  /**\n   * Button contents\n   *\n   * @required\n   */\n  @Input()\n  label = 'Button';\n\n  /**\n   * Optional click handler\n   */\n  @Output()\n  onClick = new EventEmitter<Event>();\n\n  public get classes(): string[] {\n    const mode = this.primary ? 'storybook-button--primary' : 'storybook-button--secondary';\n\n    return ['storybook-button', `storybook-button--${this.size}`, mode];\n  }\n}\n",
+            "sourceCode": "import { Component, Input, Output, EventEmitter } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'storybook-button',\r\n  template: ` <button\r\n    type=\"button\"\r\n    (click)=\"onClick.emit($event)\"\r\n    [ngClass]=\"classes\"\r\n    [ngStyle]=\"{ 'background-color': backgroundColor }\"\r\n  >\r\n    {{ label }}\r\n  </button>`,\r\n  styleUrls: ['./button.css'],\r\n})\r\nexport default class ButtonComponent {\r\n  /**\r\n   * Is this the principal call to action on the page?\r\n   */\r\n  @Input()\r\n  primary = false;\r\n\r\n  /**\r\n   * What background color to use\r\n   */\r\n  @Input()\r\n  backgroundColor?: string;\r\n\r\n  /**\r\n   * How large should the button be?\r\n   */\r\n  @Input()\r\n  size: 'small' | 'medium' | 'large' = 'medium';\r\n\r\n  /**\r\n   * Button contents\r\n   *\r\n   * @required\r\n   */\r\n  @Input()\r\n  label = 'Button';\r\n\r\n  /**\r\n   * Optional click handler\r\n   */\r\n  @Output()\r\n  onClick = new EventEmitter<Event>();\r\n\r\n  public get classes(): string[] {\r\n    const mode = this.primary ? 'storybook-button--primary' : 'storybook-button--secondary';\r\n\r\n    return ['storybook-button', `storybook-button--${this.size}`, mode];\r\n  }\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": ".storybook-button {\n  font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;\n  font-weight: 700;\n  border: 0;\n  border-radius: 3em;\n  cursor: pointer;\n  display: inline-block;\n  line-height: 1;\n}\n.storybook-button--primary {\n  color: white;\n  background-color: #1ea7fd;\n}\n.storybook-button--secondary {\n  color: #333;\n  background-color: transparent;\n  box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 0px 1px inset;\n}\n.storybook-button--small {\n  font-size: 12px;\n  padding: 10px 16px;\n}\n.storybook-button--medium {\n  font-size: 14px;\n  padding: 11px 20px;\n}\n.storybook-button--large {\n  font-size: 16px;\n  padding: 12px 24px;\n}\n",
+                    "data": ".storybook-button {\r\n  font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;\r\n  font-weight: 700;\r\n  border: 0;\r\n  border-radius: 3em;\r\n  cursor: pointer;\r\n  display: inline-block;\r\n  line-height: 1;\r\n}\r\n.storybook-button--primary {\r\n  color: white;\r\n  background-color: #1ea7fd;\r\n}\r\n.storybook-button--secondary {\r\n  color: #333;\r\n  background-color: transparent;\r\n  box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 0px 1px inset;\r\n}\r\n.storybook-button--small {\r\n  font-size: 12px;\r\n  padding: 10px 16px;\r\n}\r\n.storybook-button--medium {\r\n  font-size: 14px;\r\n  padding: 11px 20px;\r\n}\r\n.storybook-button--large {\r\n  font-size: 16px;\r\n  padding: 12px 24px;\r\n}\r\n",
                     "styleUrl": "./button.css"
                 }
             ],
@@ -1673,7 +1703,7 @@
         },
         {
             "name": "HeaderComponent",
-            "id": "component-HeaderComponent-246e2a69dc126a3bd76c6328dd3b93e2",
+            "id": "component-HeaderComponent-c349aa42f2121da4b5737d60a50fa413",
             "file": "src/stories/header.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -1723,11 +1753,11 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import { Component, Input, Output, EventEmitter } from '@angular/core';\n\n@Component({\n  selector: 'storybook-header',\n  template: `<header>\n    <div class=\"wrapper\">\n      <div>\n        <svg width=\"32\" height=\"32\" viewBox=\"0 0 32 32\" xmlns=\"http://www.w3.org/2000/svg\">\n          <g fill=\"none\" fillRule=\"evenodd\">\n            <path\n              d=\"M10 0h12a10 10 0 0110 10v12a10 10 0 01-10 10H10A10 10 0 010 22V10A10 10 0 0110 0z\"\n              fill=\"#FFF\"\n            />\n            <path\n              d=\"M5.3 10.6l10.4 6v11.1l-10.4-6v-11zm11.4-6.2l9.7 5.5-9.7 5.6V4.4z\"\n              fill=\"#555AB9\"\n            />\n            <path\n              d=\"M27.2 10.6v11.2l-10.5 6V16.5l10.5-6zM15.7 4.4v11L6 10l9.7-5.5z\"\n              fill=\"#91BAF8\"\n            />\n          </g>\n        </svg>\n        <h1>Acme</h1>\n      </div>\n      <div>\n        <storybook-button\n          *ngIf=\"user\"\n          size=\"small\"\n          (onClick)=\"onLogout.emit($event)\"\n          label=\"Log out\"\n        ></storybook-button>\n        <storybook-button\n          *ngIf=\"!user\"\n          size=\"small\"\n          (onClick)=\"onLogin.emit($event)\"\n          label=\"Log in\"\n        ></storybook-button>\n        <storybook-button\n          *ngIf=\"!user\"\n          primary\n          size=\"small\"\n          (onClick)=\"onCreateAccount.emit($event)\"\n          label=\"Sign up\"\n        ></storybook-button>\n      </div>\n    </div>\n  </header>`,\n  styleUrls: ['./header.css'],\n})\nexport default class HeaderComponent {\n  @Input()\n  user: unknown = null;\n\n  @Output()\n  onLogin = new EventEmitter<Event>();\n\n  @Output()\n  onLogout = new EventEmitter<Event>();\n\n  @Output()\n  onCreateAccount = new EventEmitter<Event>();\n}\n",
+            "sourceCode": "import { Component, Input, Output, EventEmitter } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'storybook-header',\r\n  template: `<header>\r\n    <div class=\"wrapper\">\r\n      <div>\r\n        <svg width=\"32\" height=\"32\" viewBox=\"0 0 32 32\" xmlns=\"http://www.w3.org/2000/svg\">\r\n          <g fill=\"none\" fillRule=\"evenodd\">\r\n            <path\r\n              d=\"M10 0h12a10 10 0 0110 10v12a10 10 0 01-10 10H10A10 10 0 010 22V10A10 10 0 0110 0z\"\r\n              fill=\"#FFF\"\r\n            />\r\n            <path\r\n              d=\"M5.3 10.6l10.4 6v11.1l-10.4-6v-11zm11.4-6.2l9.7 5.5-9.7 5.6V4.4z\"\r\n              fill=\"#555AB9\"\r\n            />\r\n            <path\r\n              d=\"M27.2 10.6v11.2l-10.5 6V16.5l10.5-6zM15.7 4.4v11L6 10l9.7-5.5z\"\r\n              fill=\"#91BAF8\"\r\n            />\r\n          </g>\r\n        </svg>\r\n        <h1>Acme</h1>\r\n      </div>\r\n      <div>\r\n        <storybook-button\r\n          *ngIf=\"user\"\r\n          size=\"small\"\r\n          (onClick)=\"onLogout.emit($event)\"\r\n          label=\"Log out\"\r\n        ></storybook-button>\r\n        <storybook-button\r\n          *ngIf=\"!user\"\r\n          size=\"small\"\r\n          (onClick)=\"onLogin.emit($event)\"\r\n          label=\"Log in\"\r\n        ></storybook-button>\r\n        <storybook-button\r\n          *ngIf=\"!user\"\r\n          primary\r\n          size=\"small\"\r\n          (onClick)=\"onCreateAccount.emit($event)\"\r\n          label=\"Sign up\"\r\n        ></storybook-button>\r\n      </div>\r\n    </div>\r\n  </header>`,\r\n  styleUrls: ['./header.css'],\r\n})\r\nexport default class HeaderComponent {\r\n  @Input()\r\n  user: unknown = null;\r\n\r\n  @Output()\r\n  onLogin = new EventEmitter<Event>();\r\n\r\n  @Output()\r\n  onLogout = new EventEmitter<Event>();\r\n\r\n  @Output()\r\n  onCreateAccount = new EventEmitter<Event>();\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": ".wrapper {\n  font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;\n  border-bottom: 1px solid rgba(0, 0, 0, 0.1);\n  padding: 15px 20px;\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n}\n\nsvg {\n  display: inline-block;\n  vertical-align: top;\n}\n\nh1 {\n  font-weight: 900;\n  font-size: 20px;\n  line-height: 1;\n  margin: 6px 0 6px 10px;\n  display: inline-block;\n  vertical-align: top;\n}\n\nbutton + button {\n  margin-left: 10px;\n}\n",
+                    "data": ".wrapper {\r\n  font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;\r\n  border-bottom: 1px solid rgba(0, 0, 0, 0.1);\r\n  padding: 15px 20px;\r\n  display: flex;\r\n  align-items: center;\r\n  justify-content: space-between;\r\n}\r\n\r\nsvg {\r\n  display: inline-block;\r\n  vertical-align: top;\r\n}\r\n\r\nh1 {\r\n  font-weight: 900;\r\n  font-size: 20px;\r\n  line-height: 1;\r\n  margin: 6px 0 6px 10px;\r\n  display: inline-block;\r\n  vertical-align: top;\r\n}\r\n\r\nbutton + button {\r\n  margin-left: 10px;\r\n}\r\n",
                     "styleUrl": "./header.css"
                 }
             ],
@@ -1735,7 +1765,7 @@
         },
         {
             "name": "HeaderComponent",
-            "id": "component-HeaderComponent-5d5b7a63e246c484b15077b85e126e48-1",
+            "id": "component-HeaderComponent-29bd1e3e8a9cb9f679ea08128beb2564-1",
             "file": "src/app/components/header/header.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -1872,7 +1902,7 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import { Component, OnInit } from '@angular/core';\nimport { Store } from '@ngrx/store';\nimport { AppState } from '../../app.state'\nimport { Observable } from 'rxjs';\n\nimport * as AuthActions from '../../actions/auth.actions'\nimport {\n  faLightbulb as faSolidLightbulb,\n  faDollarSign,\n  IconDefinition,\n  faEdit as faSolidEdit,\n  faTrash as faSolidTrash\n} from \"@fortawesome/free-solid-svg-icons\";\n\nimport {\n  faLightbulb as faRegularLightbulb,\n  faEdit as faRegularEdit,\n  faTrash as faRegularTrash\n} from '@fortawesome/free-solid-svg-icons';\n\nimport { ThemeService } from '../../services/theme.service'\n@Component({\n  selector: 'app-header',\n  templateUrl: './header.component.html',\n  styleUrls: ['./header.component.scss']\n})\nexport class HeaderComponent implements OnInit {\n\n  isLoggedIn: Observable<boolean>;\n  subscription;\n\n  faEdit: IconDefinition;\n  faLightbulb: IconDefinition;\n  faTrash: IconDefinition;\n  faDollarSign = faDollarSign;\n  isDark: boolean\n\n  constructor(public store: Store<AppState>, public themeService: ThemeService) {\n    this.subscription = store.select(\"auth\").subscribe((data) => {\n      this.isLoggedIn = data[\"isLoggedIn\"]\n    });\n\n  }\n\n\n  ngOnInit(): void {\n    this.store.dispatch(new AuthActions.Load_Users())\n    this.setLightbulb();\n  }\n\n  // ngOnChanges() {\n  //   this.isDark = this.themeService.isDarkTheme()\n\n  // }\n\n  Logout() {\n    this.store.dispatch(new AuthActions.Logout())\n    this.subscription = this.store.select(\"auth\").subscribe((data) => {\n      this.isLoggedIn = data[\"isLoggedIn\"]\n    });\n  }\n\n\n\n  toggleTheme() {\n    if (this.themeService.isDarkTheme()) {\n      this.themeService.setLightTheme();\n    } else {\n      this.themeService.setDarkTheme();\n    }\n\n    this.setLightbulb();\n  }\n\n  setLightbulb() {\n    if (this.themeService.isDarkTheme()) {\n      this.faEdit = faRegularEdit;\n      this.faTrash = faRegularTrash;\n\n      this.faLightbulb = faRegularLightbulb;\n    } else {\n      this.faEdit = faSolidEdit;\n      this.faTrash = faSolidTrash;\n      this.faLightbulb = faSolidLightbulb;\n    }\n  }\n\n  ngOnDestroy(): void {\n    //Called once, before the instance is destroyed.\n    //Add 'implements OnDestroy' to the class.\n    this.subscription.unsubscribe();\n  }\n\n}\n",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\r\nimport { Store } from '@ngrx/store';\r\nimport { AppState } from '../../app.state'\r\nimport { Observable } from 'rxjs';\r\n\r\nimport * as AuthActions from '../../actions/auth.actions'\r\nimport {\r\n  faLightbulb as faSolidLightbulb,\r\n  faDollarSign,\r\n  IconDefinition,\r\n  faEdit as faSolidEdit,\r\n  faTrash as faSolidTrash\r\n} from \"@fortawesome/free-solid-svg-icons\";\r\n\r\nimport {\r\n  faLightbulb as faRegularLightbulb,\r\n  faEdit as faRegularEdit,\r\n  faTrash as faRegularTrash\r\n} from '@fortawesome/free-solid-svg-icons';\r\n\r\nimport { ThemeService } from '../../services/theme.service'\r\n@Component({\r\n  selector: 'app-header',\r\n  templateUrl: './header.component.html',\r\n  styleUrls: ['./header.component.scss']\r\n})\r\nexport class HeaderComponent implements OnInit {\r\n\r\n  isLoggedIn: Observable<boolean>;\r\n  subscription;\r\n\r\n  faEdit: IconDefinition;\r\n  faLightbulb: IconDefinition;\r\n  faTrash: IconDefinition;\r\n  faDollarSign = faDollarSign;\r\n  isDark: boolean\r\n\r\n  constructor(public store: Store<AppState>, public themeService: ThemeService) {\r\n    this.subscription = store.select(\"auth\").subscribe((data) => {\r\n      this.isLoggedIn = data[\"isLoggedIn\"]\r\n    });\r\n\r\n  }\r\n\r\n\r\n  ngOnInit(): void {\r\n    this.store.dispatch(new AuthActions.Load_Users())\r\n    this.setLightbulb();\r\n  }\r\n\r\n  // ngOnChanges() {\r\n  //   this.isDark = this.themeService.isDarkTheme()\r\n\r\n  // }\r\n\r\n  Logout() {\r\n    this.store.dispatch(new AuthActions.Logout())\r\n    this.subscription = this.store.select(\"auth\").subscribe((data) => {\r\n      this.isLoggedIn = data[\"isLoggedIn\"]\r\n    });\r\n  }\r\n\r\n\r\n\r\n  toggleTheme() {\r\n    if (this.themeService.isDarkTheme()) {\r\n      this.themeService.setLightTheme();\r\n    } else {\r\n      this.themeService.setDarkTheme();\r\n    }\r\n\r\n    this.setLightbulb();\r\n  }\r\n\r\n  setLightbulb() {\r\n    if (this.themeService.isDarkTheme()) {\r\n      this.faEdit = faRegularEdit;\r\n      this.faTrash = faRegularTrash;\r\n\r\n      this.faLightbulb = faRegularLightbulb;\r\n    } else {\r\n      this.faEdit = faSolidEdit;\r\n      this.faTrash = faSolidTrash;\r\n      this.faLightbulb = faSolidLightbulb;\r\n    }\r\n  }\r\n\r\n  ngOnDestroy(): void {\r\n    //Called once, before the instance is destroyed.\r\n    //Add 'implements OnDestroy' to the class.\r\n    this.subscription.unsubscribe();\r\n  }\r\n\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -1922,7 +1952,7 @@
         },
         {
             "name": "HomeComponent",
-            "id": "component-HomeComponent-0368ba31f32dcbd90cb54a0bd661b89c",
+            "id": "component-HomeComponent-56fc62082e04324f0ca02348d9343623",
             "file": "src/app/components/home/home.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -1956,7 +1986,7 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import { Component, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'app-home',\n  templateUrl: './home.component.html',\n  styleUrls: ['./home.component.scss']\n})\nexport class HomeComponent implements OnInit {\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n}\n",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-home',\r\n  templateUrl: './home.component.html',\r\n  styleUrls: ['./home.component.scss']\r\n})\r\nexport class HomeComponent implements OnInit {\r\n\r\n  constructor() { }\r\n\r\n  ngOnInit(): void {\r\n  }\r\n\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -2110,7 +2140,7 @@
         },
         {
             "name": "MovieCardComponent",
-            "id": "component-MovieCardComponent-8e476f0ad45b21fdec1fdd165eb72b01",
+            "id": "component-MovieCardComponent-eb823616d18a9f4d9759fa8568639c28",
             "file": "src/app/components/movie/movie-card/movie-card.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -2128,9 +2158,34 @@
             "viewProviders": [],
             "inputsClass": [
                 {
-                    "name": "movie",
+                    "name": "id",
                     "line": 11,
-                    "type": "Movie"
+                    "description": "<p>Unique id of movie</p>\n",
+                    "type": "number"
+                },
+                {
+                    "name": "name",
+                    "line": 11,
+                    "description": "<p>Name of movie</p>\n",
+                    "type": "string"
+                },
+                {
+                    "name": "genre",
+                    "line": 11,
+                    "description": "<p>Genre of movie</p>\n",
+                    "type": "string"
+                },
+                {
+                    "name": "rating",
+                    "line": 11,
+                    "description": "<p>Rating of movie</p>\n",
+                    "type": "number"
+                },
+                {
+                    "name": "cast",
+                    "line": 11,
+                    "description": "<p>Cast of movie</p>\n",
+                    "type": "string"
                 }
             ],
             "outputsClass": [],
@@ -2150,7 +2205,7 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import { Component, OnInit, Input } from '@angular/core';\nimport { Movie } from '../../../model/Movie';\n\n@Component({\n  selector: 'movie-card',\n  templateUrl: './movie-card.component.html',\n  styleUrls: ['./movie-card.component.scss']\n})\nexport class MovieCardComponent implements OnInit {\n\n  @Input() movie: Movie;\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n}\n",
+            "sourceCode": "import { Component, OnInit, Input } from '@angular/core';\r\nimport { Movie } from '../../../model/Movie';\r\n\r\n@Component({\r\n  selector: 'movie-card',\r\n  templateUrl: './movie-card.component.html',\r\n  styleUrls: ['./movie-card.component.scss']\r\n})\r\nexport class MovieCardComponent implements OnInit {\r\n\r\n  @Input() movie: Movie;\r\n  constructor() { }\r\n\r\n  ngOnInit(): void {\r\n  }\r\n\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -2406,7 +2461,7 @@
         },
         {
             "name": "PageComponent",
-            "id": "component-PageComponent-cca1a8911321fa17756ce90c90de65cc",
+            "id": "component-PageComponent-caf3f2fce2bf7356cf7ccd76b8a88482",
             "file": "src/stories/page.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -2456,11 +2511,11 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import { Component, Input, Output, EventEmitter } from '@angular/core';\n\n@Component({\n  selector: 'storybook-page',\n  template: `<article>\n    <storybook-header\n      [user]=\"user\"\n      (onLogout)=\"onLogout.emit($event)\"\n      (onLogin)=\"onLogin.emit($event)\"\n      (onCreateAccount)=\"onCreateAccount.emit($event)\"\n    ></storybook-header>\n    <section>\n      <h2>Pages in Storybook</h2>\n      <p>\n        We recommend building UIs with a\n        <a href=\"https://componentdriven.org\" target=\"_blank\" rel=\"noopener noreferrer\">\n          <strong>component-driven</strong>\n        </a>\n        process starting with atomic components and ending with pages.\n      </p>\n      <p>\n        Render pages with mock data. This makes it easy to build and review page states without\n        needing to navigate to them in your app. Here are some handy patterns for managing page data\n        in Storybook:\n      </p>\n      <ul>\n        <li>\n          Use a higher-level connected component. Storybook helps you compose such data from the\n          \"args\" of child component stories\n        </li>\n        <li>\n          Assemble data in the page component from your services. You can mock these services out\n          using Storybook.\n        </li>\n      </ul>\n      <p>\n        Get a guided tutorial on component-driven development at\n        <a href=\"https://www.learnstorybook.com\" target=\"_blank\" rel=\"noopener noreferrer\">\n          Learn Storybook\n        </a>\n        . Read more in the\n        <a href=\"https://storybook.js.org/docs\" target=\"_blank\" rel=\"noopener noreferrer\">\n          docs\n        </a>\n        .\n      </p>\n      <div class=\"tip-wrapper\">\n        <span class=\"tip\">Tip</span> Adjust the width of the canvas with the\n        <svg width=\"10\" height=\"10\" viewBox=\"0 0 12 12\" xmlns=\"http://www.w3.org/2000/svg\">\n          <g fill=\"none\" fillRule=\"evenodd\">\n            <path\n              d=\"M1.5 5.2h4.8c.3 0 .5.2.5.4v5.1c-.1.2-.3.3-.4.3H1.4a.5.5 0 01-.5-.4V5.7c0-.3.2-.5.5-.5zm0-2.1h6.9c.3 0 .5.2.5.4v7a.5.5 0 01-1 0V4H1.5a.5.5 0 010-1zm0-2.1h9c.3 0 .5.2.5.4v9.1a.5.5 0 01-1 0V2H1.5a.5.5 0 010-1zm4.3 5.2H2V10h3.8V6.2z\"\n              id=\"a\"\n              fill=\"#999\"\n            />\n          </g>\n        </svg>\n        Viewports addon in the toolbar\n      </div>\n    </section>\n  </article>`,\n  styleUrls: ['./page.css'],\n})\nexport default class PageComponent {\n  @Input()\n  user: unknown = null;\n\n  @Output()\n  onLogin = new EventEmitter<Event>();\n\n  @Output()\n  onLogout = new EventEmitter<Event>();\n\n  @Output()\n  onCreateAccount = new EventEmitter<Event>();\n}\n\n// export const Page = ({ user, onLogin, onLogout, onCreateAccount }) => (\n//   <article>\n//     <Header user={user} onLogin={onLogin} onLogout={onLogout} onCreateAccount={onCreateAccount} />\n\n// );\n// Page.propTypes = {\n//   user: PropTypes.shape({}),\n//   onLogin: PropTypes.func.isRequired,\n//   onLogout: PropTypes.func.isRequired,\n//   onCreateAccount: PropTypes.func.isRequired,\n// };\n\n// Page.defaultProps = {\n//   user: null,\n// };\n",
+            "sourceCode": "import { Component, Input, Output, EventEmitter } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'storybook-page',\r\n  template: `<article>\r\n    <storybook-header\r\n      [user]=\"user\"\r\n      (onLogout)=\"onLogout.emit($event)\"\r\n      (onLogin)=\"onLogin.emit($event)\"\r\n      (onCreateAccount)=\"onCreateAccount.emit($event)\"\r\n    ></storybook-header>\r\n    <section>\r\n      <h2>Pages in Storybook</h2>\r\n      <p>\r\n        We recommend building UIs with a\r\n        <a href=\"https://componentdriven.org\" target=\"_blank\" rel=\"noopener noreferrer\">\r\n          <strong>component-driven</strong>\r\n        </a>\r\n        process starting with atomic components and ending with pages.\r\n      </p>\r\n      <p>\r\n        Render pages with mock data. This makes it easy to build and review page states without\r\n        needing to navigate to them in your app. Here are some handy patterns for managing page data\r\n        in Storybook:\r\n      </p>\r\n      <ul>\r\n        <li>\r\n          Use a higher-level connected component. Storybook helps you compose such data from the\r\n          \"args\" of child component stories\r\n        </li>\r\n        <li>\r\n          Assemble data in the page component from your services. You can mock these services out\r\n          using Storybook.\r\n        </li>\r\n      </ul>\r\n      <p>\r\n        Get a guided tutorial on component-driven development at\r\n        <a href=\"https://www.learnstorybook.com\" target=\"_blank\" rel=\"noopener noreferrer\">\r\n          Learn Storybook\r\n        </a>\r\n        . Read more in the\r\n        <a href=\"https://storybook.js.org/docs\" target=\"_blank\" rel=\"noopener noreferrer\">\r\n          docs\r\n        </a>\r\n        .\r\n      </p>\r\n      <div class=\"tip-wrapper\">\r\n        <span class=\"tip\">Tip</span> Adjust the width of the canvas with the\r\n        <svg width=\"10\" height=\"10\" viewBox=\"0 0 12 12\" xmlns=\"http://www.w3.org/2000/svg\">\r\n          <g fill=\"none\" fillRule=\"evenodd\">\r\n            <path\r\n              d=\"M1.5 5.2h4.8c.3 0 .5.2.5.4v5.1c-.1.2-.3.3-.4.3H1.4a.5.5 0 01-.5-.4V5.7c0-.3.2-.5.5-.5zm0-2.1h6.9c.3 0 .5.2.5.4v7a.5.5 0 01-1 0V4H1.5a.5.5 0 010-1zm0-2.1h9c.3 0 .5.2.5.4v9.1a.5.5 0 01-1 0V2H1.5a.5.5 0 010-1zm4.3 5.2H2V10h3.8V6.2z\"\r\n              id=\"a\"\r\n              fill=\"#999\"\r\n            />\r\n          </g>\r\n        </svg>\r\n        Viewports addon in the toolbar\r\n      </div>\r\n    </section>\r\n  </article>`,\r\n  styleUrls: ['./page.css'],\r\n})\r\nexport default class PageComponent {\r\n  @Input()\r\n  user: unknown = null;\r\n\r\n  @Output()\r\n  onLogin = new EventEmitter<Event>();\r\n\r\n  @Output()\r\n  onLogout = new EventEmitter<Event>();\r\n\r\n  @Output()\r\n  onCreateAccount = new EventEmitter<Event>();\r\n}\r\n\r\n// export const Page = ({ user, onLogin, onLogout, onCreateAccount }) => (\r\n//   <article>\r\n//     <Header user={user} onLogin={onLogin} onLogout={onLogout} onCreateAccount={onCreateAccount} />\r\n\r\n// );\r\n// Page.propTypes = {\r\n//   user: PropTypes.shape({}),\r\n//   onLogin: PropTypes.func.isRequired,\r\n//   onLogout: PropTypes.func.isRequired,\r\n//   onCreateAccount: PropTypes.func.isRequired,\r\n// };\r\n\r\n// Page.defaultProps = {\r\n//   user: null,\r\n// };\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "section {\n  font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;\n  font-size: 14px;\n  line-height: 24px;\n  padding: 48px 20px;\n  margin: 0 auto;\n  max-width: 600px;\n  color: #333;\n}\n\nh2 {\n  font-weight: 900;\n  font-size: 32px;\n  line-height: 1;\n  margin: 0 0 4px;\n  display: inline-block;\n  vertical-align: top;\n}\n\np {\n  margin: 1em 0;\n}\n\na {\n  text-decoration: none;\n  color: #1ea7fd;\n}\n\nul {\n  padding-left: 30px;\n  margin: 1em 0;\n}\n\nli {\n  margin-bottom: 8px;\n}\n\n.tip {\n  display: inline-block;\n  border-radius: 1em;\n  font-size: 11px;\n  line-height: 12px;\n  font-weight: 700;\n  background: #e7fdd8;\n  color: #66bf3c;\n  padding: 4px 12px;\n  margin-right: 10px;\n  vertical-align: top;\n}\n\n.tip-wrapper {\n  font-size: 13px;\n  line-height: 20px;\n  margin-top: 40px;\n  margin-bottom: 40px;\n}\n\n.tip-wrapper svg {\n  display: inline-block;\n  height: 12px;\n  width: 12px;\n  margin-right: 4px;\n  vertical-align: top;\n  margin-top: 3px;\n}\n\n.tip-wrapper svg path {\n  fill: #1ea7fd;\n}\n",
+                    "data": "section {\r\n  font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;\r\n  font-size: 14px;\r\n  line-height: 24px;\r\n  padding: 48px 20px;\r\n  margin: 0 auto;\r\n  max-width: 600px;\r\n  color: #333;\r\n}\r\n\r\nh2 {\r\n  font-weight: 900;\r\n  font-size: 32px;\r\n  line-height: 1;\r\n  margin: 0 0 4px;\r\n  display: inline-block;\r\n  vertical-align: top;\r\n}\r\n\r\np {\r\n  margin: 1em 0;\r\n}\r\n\r\na {\r\n  text-decoration: none;\r\n  color: #1ea7fd;\r\n}\r\n\r\nul {\r\n  padding-left: 30px;\r\n  margin: 1em 0;\r\n}\r\n\r\nli {\r\n  margin-bottom: 8px;\r\n}\r\n\r\n.tip {\r\n  display: inline-block;\r\n  border-radius: 1em;\r\n  font-size: 11px;\r\n  line-height: 12px;\r\n  font-weight: 700;\r\n  background: #e7fdd8;\r\n  color: #66bf3c;\r\n  padding: 4px 12px;\r\n  margin-right: 10px;\r\n  vertical-align: top;\r\n}\r\n\r\n.tip-wrapper {\r\n  font-size: 13px;\r\n  line-height: 20px;\r\n  margin-top: 40px;\r\n  margin-bottom: 40px;\r\n}\r\n\r\n.tip-wrapper svg {\r\n  display: inline-block;\r\n  height: 12px;\r\n  width: 12px;\r\n  margin-right: 4px;\r\n  vertical-align: top;\r\n  margin-top: 3px;\r\n}\r\n\r\n.tip-wrapper svg path {\r\n  fill: #1ea7fd;\r\n}\r\n",
                     "styleUrl": "./page.css"
                 }
             ],
@@ -2582,11 +2637,11 @@
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<div class=\"container\">\n\n\n    <form (ngSubmit)=\"SignUp()\" ngNativeValidate>\n        <div class=\"info\">\n            <h2>Sign Up Form</h2>\n        </div>\n        <div class=\"info\">\n            <label htmlFor=\"username\">\n                Username\n            </label>\n            <input type=\"text\" name=\"username\" id=\"\" [(ngModel)]=\"User.username\" required>\n        </div>\n\n\n        <div class=\"info\">\n            <label htmlFor=\"password\">\n                Password\n            </label>\n            <input type=\"password\" name=\"password\" id=\"\" required [(ngModel)]=\"User.password\" required>\n        </div>\n\n        <div class=\"info\">\n            <input type=\"submit\" value=\"Sign Up\" class=\"signup button\">\n        </div>\n    </form>\n</div>"
+            "templateData": "<div class=\"container\">\r\n\r\n\r\n    <form (ngSubmit)=\"SignUp()\" ngNativeValidate>\r\n        <div class=\"info\">\r\n            <h2>Sign Up Form</h2>\r\n        </div>\r\n        <div class=\"info\">\r\n            <label htmlFor=\"username\">\r\n                Username\r\n            </label>\r\n            <input type=\"text\" name=\"username\" id=\"\" [(ngModel)]=\"User.username\" required>\r\n        </div>\r\n\r\n\r\n        <div class=\"info\">\r\n            <label htmlFor=\"password\">\r\n                Password\r\n            </label>\r\n            <input type=\"password\" name=\"password\" id=\"\" required [(ngModel)]=\"User.password\" required>\r\n        </div>\r\n\r\n        <div class=\"info\">\r\n            <input type=\"submit\" value=\"Sign Up\" class=\"signup button\">\r\n        </div>\r\n    </form>\r\n</div>"
         },
         {
             "name": "UpdateComponent",
-            "id": "component-UpdateComponent-9a62fbab62c81458d6935e57ed0422a6",
+            "id": "component-UpdateComponent-516a04c0c153d0fd042d6b67e79c5cfa",
             "file": "src/app/components/movie/update/update.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -2645,7 +2700,7 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import { Component, OnInit } from '@angular/core';\nimport { Router } from '@angular/router'\n\nimport { Store } from '@ngrx/store';\nimport { AppState } from '../../../app.state'\nimport { Movie } from '../../../model/Movie'\nimport { Observable } from 'rxjs';\nimport * as MovieActions from '../../../actions/movie.actions'\n@Component({\n  selector: 'app-update',\n  templateUrl: './update.component.html',\n  styleUrls: ['./update.component.scss']\n})\nexport class UpdateComponent implements OnInit {\n\n  constructor(private store: Store<AppState>, private router: Router) { }\n\n  joinedCast: string = \"\";\n\n  Movie: Movie = {} as Movie;\n  ngOnInit(): void {\n    console.log('Movie name is ', window.history.state.name)\n    this.Movie = window.history.state\n    this.joinedCast = this.Movie.cast.join(\";\")\n  }\n\n  onSubmit() {\n    this.Movie.rating = parseFloat(this.Movie.rating.toString())\n    this.Movie.cast = this.joinedCast.split(\";\").filter((x) => x.trim() != \"\")\n    this.store.dispatch(new MovieActions.UpdateMovie(this.Movie));\n    this.router.navigate(['home'])\n  }\n\n\n\n\n}\n",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\r\nimport { Router } from '@angular/router'\r\n\r\nimport { Store } from '@ngrx/store';\r\nimport { AppState } from '../../../app.state'\r\nimport { Movie } from '../../../model/Movie'\r\nimport { Observable } from 'rxjs';\r\nimport * as MovieActions from '../../../actions/movie.actions'\r\n@Component({\r\n  selector: 'app-update',\r\n  templateUrl: './update.component.html',\r\n  styleUrls: ['./update.component.scss']\r\n})\r\nexport class UpdateComponent implements OnInit {\r\n\r\n  constructor(private store: Store<AppState>, private router: Router) { }\r\n\r\n  joinedCast: string = \"\";\r\n\r\n  Movie: Movie = {} as Movie;\r\n  ngOnInit(): void {\r\n    console.log('Movie name is ', window.history.state.name)\r\n    this.Movie = window.history.state\r\n    this.joinedCast = this.Movie.cast.join(\";\")\r\n  }\r\n\r\n  onSubmit() {\r\n    this.Movie.rating = parseFloat(this.Movie.rating.toString())\r\n    this.Movie.cast = this.joinedCast.split(\";\").filter((x) => x.trim() != \"\")\r\n    this.store.dispatch(new MovieActions.UpdateMovie(this.Movie));\r\n    this.router.navigate(['home'])\r\n  }\r\n\r\n\r\n\r\n\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -2688,7 +2743,7 @@
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<div class=\"container\">\n    <form (ngSubmit)=\"onSubmit()\" ngNativeValidate>\n        <div class=\"info\">\n            <h2>Update Movie details</h2>\n        </div>\n        <div class=\"info\">\n            <label htmlFor=\"name\">\n                Name\n            </label>\n            <input type=\"text\" name=\"name\" id=\"\" [(ngModel)]=\"Movie.name\" required>\n        </div>\n        <div class=\"info\">\n            <label htmlFor=\"genre\">\n                Genre\n            </label>\n            <input type=\"text\" name=\"genre\" id=\"\" [(ngModel)]=\"Movie.genre\" required>\n        </div>\n\n        <div class=\"info\">\n            <label htmlFor=\"rating\">\n                Rating\n            </label>\n            <input type=\"number\" name=\"rating\" id=\"\" min=\"1\" max=\"10\" step=\"0.1\" [(ngModel)]=\"Movie.rating\" required>\n        </div>\n\n        <div class=\"info\">\n            <label htmlFor=\"cast\">\n                Cast\n            </label>\n            <input type=\"text\" name=\"cast\" id=\"\" [(ngModel)]=\"joinedCast\" required>\n        </div>\n        <div class=\"info\">\n            <input type=\"submit\" value=\"Update Movie\" class=\"button updateMovie\">\n\n        </div>\n    </form>\n</div>"
+            "templateData": "<div class=\"container\">\r\n    <form (ngSubmit)=\"onSubmit()\" ngNativeValidate>\r\n        <div class=\"info\">\r\n            <h2>Update Movie details</h2>\r\n        </div>\r\n        <div class=\"info\">\r\n            <label htmlFor=\"name\">\r\n                Name\r\n            </label>\r\n            <input type=\"text\" name=\"name\" id=\"\" [(ngModel)]=\"Movie.name\" required>\r\n        </div>\r\n        <div class=\"info\">\r\n            <label htmlFor=\"genre\">\r\n                Genre\r\n            </label>\r\n            <input type=\"text\" name=\"genre\" id=\"\" [(ngModel)]=\"Movie.genre\" required>\r\n        </div>\r\n\r\n        <div class=\"info\">\r\n            <label htmlFor=\"rating\">\r\n                Rating\r\n            </label>\r\n            <input type=\"number\" name=\"rating\" id=\"\" min=\"1\" max=\"10\" step=\"0.1\" [(ngModel)]=\"Movie.rating\" required>\r\n        </div>\r\n\r\n        <div class=\"info\">\r\n            <label htmlFor=\"cast\">\r\n                Cast\r\n            </label>\r\n            <input type=\"text\" name=\"cast\" id=\"\" [(ngModel)]=\"joinedCast\" required>\r\n        </div>\r\n        <div class=\"info\">\r\n            <input type=\"submit\" value=\"Update Movie\" class=\"button updateMovie\">\r\n\r\n        </div>\r\n    </form>\r\n</div>"
         }
     ],
     "modules": [
@@ -2869,7 +2924,7 @@
                 "subtype": "variable",
                 "file": "src/environments/environment.prod.ts",
                 "type": "object",
-                "defaultValue": "{\n  production: true\n}"
+                "defaultValue": "{\r\n  production: true\r\n}"
             },
             {
                 "name": "environment",
@@ -2877,7 +2932,7 @@
                 "subtype": "variable",
                 "file": "src/environments/environment.ts",
                 "type": "object",
-                "defaultValue": "{\n  production: false\n}"
+                "defaultValue": "{\r\n  production: false\r\n}"
             },
             {
                 "name": "initialState",
@@ -2885,7 +2940,7 @@
                 "subtype": "variable",
                 "file": "src/app/reducers/auth.reducer.ts",
                 "type": "object",
-                "defaultValue": "{\r\n    isLoggedIn: true,\r\n    \"users\": [],\r\n}"
+                "defaultValue": "{\r\n    isLoggedIn: false,\r\n    \"users\": [],\r\n}"
             },
             {
                 "name": "initialState",
@@ -3000,6 +3055,14 @@
                 "defaultValue": "Template.bind({})"
             },
             {
+                "name": "Primary",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/movie-card.stories.ts",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
                 "name": "require",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -3044,15 +3107,23 @@
                 "subtype": "variable",
                 "file": "src/stories/Button.stories.ts",
                 "type": "Story<Button>",
-                "defaultValue": "(args: Button) => ({\n  component: Button,\n  props: args,\n})"
+                "defaultValue": "(args: Button) => ({\r\n  component: Button,\r\n  props: args,\r\n})"
             },
             {
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "src/stories/Header.stories.ts",
-                "type": "Story<Header>",
-                "defaultValue": "(args: Header) => ({\n  component: Header,\n  props: args,\n})"
+                "type": "Story<HeaderComponent>",
+                "defaultValue": "(args: HeaderComponent) => ({\r\n  component: HeaderComponent,\r\n  props: args,\r\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/movie-card.stories.ts",
+                "type": "Story<MovieCardComponent>",
+                "defaultValue": "(args: MovieCardComponent) => ({\r\n    component: MovieCardComponent,\r\n    props: args,\r\n})"
             },
             {
                 "name": "Template",
@@ -3060,7 +3131,7 @@
                 "subtype": "variable",
                 "file": "src/stories/Page.stories.ts",
                 "type": "Story<Page>",
-                "defaultValue": "(args: Page) => ({\n  component: Page,\n  props: args,\n})"
+                "defaultValue": "(args: Page) => ({\r\n  component: Page,\r\n  props: args,\r\n})"
             },
             {
                 "name": "UPDATE_MOVIE",
@@ -3275,7 +3346,7 @@
                     "subtype": "variable",
                     "file": "src/environments/environment.prod.ts",
                     "type": "object",
-                    "defaultValue": "{\n  production: true\n}"
+                    "defaultValue": "{\r\n  production: true\r\n}"
                 }
             ],
             "src/environments/environment.ts": [
@@ -3285,7 +3356,7 @@
                     "subtype": "variable",
                     "file": "src/environments/environment.ts",
                     "type": "object",
-                    "defaultValue": "{\n  production: false\n}"
+                    "defaultValue": "{\r\n  production: false\r\n}"
                 }
             ],
             "src/app/reducers/auth.reducer.ts": [
@@ -3295,7 +3366,7 @@
                     "subtype": "variable",
                     "file": "src/app/reducers/auth.reducer.ts",
                     "type": "object",
-                    "defaultValue": "{\r\n    isLoggedIn: true,\r\n    \"users\": [],\r\n}"
+                    "defaultValue": "{\r\n    isLoggedIn: false,\r\n    \"users\": [],\r\n}"
                 }
             ],
             "src/app/reducers/movie.reducer.ts": [
@@ -3347,7 +3418,7 @@
                     "subtype": "variable",
                     "file": "src/stories/Button.stories.ts",
                     "type": "Story<Button>",
-                    "defaultValue": "(args: Button) => ({\n  component: Button,\n  props: args,\n})"
+                    "defaultValue": "(args: Button) => ({\r\n  component: Button,\r\n  props: args,\r\n})"
                 }
             ],
             "src/app/actions/auth.actions.ts": [
@@ -3422,8 +3493,8 @@
                     "ctype": "miscellaneous",
                     "subtype": "variable",
                     "file": "src/stories/Header.stories.ts",
-                    "type": "Story<Header>",
-                    "defaultValue": "(args: Header) => ({\n  component: Header,\n  props: args,\n})"
+                    "type": "Story<HeaderComponent>",
+                    "defaultValue": "(args: HeaderComponent) => ({\r\n  component: HeaderComponent,\r\n  props: args,\r\n})"
                 }
             ],
             "src/stories/Page.stories.ts": [
@@ -3449,7 +3520,25 @@
                     "subtype": "variable",
                     "file": "src/stories/Page.stories.ts",
                     "type": "Story<Page>",
-                    "defaultValue": "(args: Page) => ({\n  component: Page,\n  props: args,\n})"
+                    "defaultValue": "(args: Page) => ({\r\n  component: Page,\r\n  props: args,\r\n})"
+                }
+            ],
+            "src/stories/movie-card.stories.ts": [
+                {
+                    "name": "Primary",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/movie-card.stories.ts",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/movie-card.stories.ts",
+                    "type": "Story<MovieCardComponent>",
+                    "defaultValue": "(args: MovieCardComponent) => ({\r\n    component: MovieCardComponent,\r\n    props: args,\r\n})"
                 }
             ]
         },
@@ -3968,6 +4057,15 @@
                 "status": "low"
             },
             {
+                "filePath": "src/app/custom-components/Rating.ts",
+                "type": "class",
+                "linktype": "classe",
+                "name": "Rating",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
                 "filePath": "src/app/effects/auth.effects.ts",
                 "type": "injectable",
                 "linktype": "injectable",
@@ -4243,6 +4341,26 @@
                 "name": "HeaderComponent",
                 "coveragePercent": 0,
                 "coverageCount": "0/5",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/movie-card.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Primary",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/movie-card.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
                 "status": "low"
             },
             {
