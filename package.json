@@ -5,12 +5,19 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
-    "test": "ng test",
+    "test": "jest",
     "lint": "ng lint",
     "e2e": "ng e2e",
     "docs:json": "compodoc -p ./tsconfig.base.json -e json -d .",
     "storybook": "npm run docs:json && start-storybook -p 6006",
     "build-storybook": "npm run docs:json && build-storybook"
+  },
+  "jest": {
+    "preset": "jest-preset-angular",
+    "roots": [
+      "<rootDir>/src/"
+    ],
+    "setupTestFrameworkScriptFile": "<rootDir>/src/setup-jest.ts"
   },
   "private": true,
   "dependencies": {
@@ -34,6 +41,9 @@
     "@ngrx/effects": "^10.0.0",
     "@ngrx/store": "^10.0.0",
     "@ngrx/store-devtools": "^10.0.0",
+    "@types/jest": "^26.0.13",
+    "jest": "^26.4.2",
+    "jest-preset-angular": "^8.3.1",
     "lit-element": "^2.4.0",
     "rxjs": "~6.5.5",
     "tslib": "^2.0.0",

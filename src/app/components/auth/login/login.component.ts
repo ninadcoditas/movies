@@ -5,7 +5,7 @@ import { Router } from '@angular/router'
 
 import { Observable } from 'rxjs';
 import * as AuthActions from '../../../actions/auth.actions'
-import { User } from 'src/app/model/User';
+import { User } from '../../../model/User';
 
 @Component({
   selector: 'app-login',

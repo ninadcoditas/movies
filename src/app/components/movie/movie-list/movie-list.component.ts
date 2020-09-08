@@ -24,7 +24,7 @@ import {
   faTrash as faRegularTrash
 } from '@fortawesome/free-solid-svg-icons';
 import { faTrash, faEdit } from '@fortawesome/free-solid-svg-icons';
-import { ThemeService } from 'src/app/services/theme.service';
+import { ThemeService } from '../../../services/theme.service';
 
 @Component({
   selector: 'movie-list',

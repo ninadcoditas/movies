@@ -6,5 +6,5 @@ import { Movie } from './model/Movie';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-
+  title: string;
 }

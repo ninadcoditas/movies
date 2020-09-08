@@ -5,7 +5,7 @@ import { Store } from '@ngrx/store';
 import { AppState } from '../../../app.state'
 import { Observable } from 'rxjs';
 import * as AuthActions from '../../../actions/auth.actions'
-import { User } from 'src/app/model/User';
+import { User } from '../../../model/User';
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.component.html',
