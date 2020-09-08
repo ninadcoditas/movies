@@ -23,15 +23,15 @@ export default {
     component: AddComponent,
     decorators: [
         moduleMetadata({
-            declarations: [
-                HomeComponent,
-                UpdateComponent,
-                LoginComponent,
-                SignupComponent,
-                HeaderComponent,
-                MovieCardComponent,
-                MovieListComponent
-            ],
+            // declarations: [
+            //     HomeComponent,
+            //     UpdateComponent,
+            //     LoginComponent,
+            //     SignupComponent,
+            //     HeaderComponent,
+            //     MovieCardComponent,
+            //     MovieListComponent
+            // ],
             imports: [
                 CommonModule,
 
