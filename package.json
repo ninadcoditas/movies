@@ -17,7 +17,9 @@
     "roots": [
       "<rootDir>/src/"
     ],
-    "setupTestFrameworkScriptFile": "<rootDir>/src/setup-jest.ts"
+    "setupFilesAfterEnv": [
+      "<rootDir>/src/setup-jest.ts"
+    ]
   },
   "private": true,
   "dependencies": {
