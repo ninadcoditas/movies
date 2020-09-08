@@ -32,6 +32,7 @@ customElements.define('movie-rating', Rating);
 
 import { Cast } from './custom-components/Cast';
 import { TestComponent } from './test/test.component';
+
 customElements.define('movie-cast', Cast);
 @NgModule({
   declarations: [
@@ -44,7 +45,7 @@ customElements.define('movie-cast', Cast);
     HeaderComponent,
     SignupComponent,
     LoginComponent,
-    TestComponent
+    TestComponent,
 
   ],
   imports: [
