@@ -1720,30 +1720,22 @@
             "viewProviders": [],
             "inputsClass": [
                 {
-                    "name": "user",
-                    "defaultValue": "null",
-                    "line": 53,
-                    "type": "unknown"
+                    "name": "isLoggedIn",
+                    "line": 11,
+                    "description": "Logged in status of user",
+                    "type": "boolean"
                 }
             ],
             "outputsClass": [
                 {
-                    "name": "onCreateAccount",
-                    "defaultValue": "new EventEmitter<Event>()",
-                    "line": 62,
-                    "type": "EventEmitter"
-                },
-                {
                     "name": "onLogin",
-                    "defaultValue": "new EventEmitter<Event>()",
                     "line": 56,
-                    "type": "EventEmitter"
+                    "description": "Redirects user to Login form page"
                 },
                 {
                     "name": "onLogout",
-                    "defaultValue": "new EventEmitter<Event>()",
                     "line": 59,
-                    "type": "EventEmitter"
+                    "description": "Logs out the user"
                 }
             ],
             "propertiesClass": [],

@@ -34,9 +34,7 @@ const Template: Story<HeaderComponent> = (args: HeaderComponent) => ({
 
 export const LoggedIn = Template.bind({});
 LoggedIn.args = {
-  user: {
-    isLoggedIn: true
-  },
+  isLoggedIn: true
 };
 
 export const LoggedOut = Template.bind({});
