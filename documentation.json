@@ -2158,34 +2158,9 @@
             "viewProviders": [],
             "inputsClass": [
                 {
-                    "name": "id",
+                    "name": "movie",
                     "line": 11,
-                    "description": "<p>Unique id of movie</p>\n",
-                    "type": "number"
-                },
-                {
-                    "name": "name",
-                    "line": 11,
-                    "description": "<p>Name of movie</p>\n",
-                    "type": "string"
-                },
-                {
-                    "name": "genre",
-                    "line": 11,
-                    "description": "<p>Genre of movie</p>\n",
-                    "type": "string"
-                },
-                {
-                    "name": "rating",
-                    "line": 11,
-                    "description": "<p>Rating of movie</p>\n",
-                    "type": "number"
-                },
-                {
-                    "name": "cast",
-                    "line": 11,
-                    "description": "<p>Cast of movie</p>\n",
-                    "type": "string"
+                    "type": "Movie"
                 }
             ],
             "outputsClass": [],
@@ -2764,6 +2739,9 @@
                             "name": "AppComponent"
                         },
                         {
+                            "name": "HeaderComponent"
+                        },
+                        {
                             "name": "HomeComponent"
                         },
                         {
@@ -3063,6 +3041,14 @@
                 "defaultValue": "Template.bind({})"
             },
             {
+                "name": "Primary",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/signup.stories.ts",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
                 "name": "require",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -3132,6 +3118,14 @@
                 "file": "src/stories/Page.stories.ts",
                 "type": "Story<Page>",
                 "defaultValue": "(args: Page) => ({\r\n  component: Page,\r\n  props: args,\r\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/signup.stories.ts",
+                "type": "Story<SignupComponent>",
+                "defaultValue": "(args: SignupComponent) => ({\r\n    component: SignupComponent,\r\n    props: args,\r\n})"
             },
             {
                 "name": "UPDATE_MOVIE",
@@ -3221,8 +3215,8 @@
                 "name": "Actions",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
-                "rawtype": "Login | Logout | Signup_Success | Signup | Load_Users | Load_Users_Success",
-                "file": "src/app/actions/auth.actions.ts",
+                "rawtype": "AddMovie | AddMovieSuccess | DeleteMovie | DeleteMovieSuccess | UpdateMovie | UpdateMovieSuccess | LoadMovie | LoadMovieSucess",
+                "file": "src/app/actions/movie.actions.ts",
                 "description": "",
                 "kind": 168
             },
@@ -3230,8 +3224,8 @@
                 "name": "Actions",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
-                "rawtype": "AddMovie | AddMovieSuccess | DeleteMovie | DeleteMovieSuccess | UpdateMovie | UpdateMovieSuccess | LoadMovie | LoadMovieSucess",
-                "file": "src/app/actions/movie.actions.ts",
+                "rawtype": "Login | Logout | Signup_Success | Signup | Load_Users | Load_Users_Success",
+                "file": "src/app/actions/auth.actions.ts",
                 "description": "",
                 "kind": 168
             }
@@ -3540,6 +3534,24 @@
                     "type": "Story<MovieCardComponent>",
                     "defaultValue": "(args: MovieCardComponent) => ({\r\n    component: MovieCardComponent,\r\n    props: args,\r\n})"
                 }
+            ],
+            "src/stories/signup.stories.ts": [
+                {
+                    "name": "Primary",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/signup.stories.ts",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/signup.stories.ts",
+                    "type": "Story<SignupComponent>",
+                    "defaultValue": "(args: SignupComponent) => ({\r\n    component: SignupComponent,\r\n    props: args,\r\n})"
+                }
             ]
         },
         "groupedFunctions": {
@@ -3614,17 +3626,6 @@
         },
         "groupedEnumerations": {},
         "groupedTypeAliases": {
-            "src/app/actions/auth.actions.ts": [
-                {
-                    "name": "Actions",
-                    "ctype": "miscellaneous",
-                    "subtype": "typealias",
-                    "rawtype": "Login | Logout | Signup_Success | Signup | Load_Users | Load_Users_Success",
-                    "file": "src/app/actions/auth.actions.ts",
-                    "description": "",
-                    "kind": 168
-                }
-            ],
             "src/app/actions/movie.actions.ts": [
                 {
                     "name": "Actions",
@@ -3632,6 +3633,17 @@
                     "subtype": "typealias",
                     "rawtype": "AddMovie | AddMovieSuccess | DeleteMovie | DeleteMovieSuccess | UpdateMovie | UpdateMovieSuccess | LoadMovie | LoadMovieSucess",
                     "file": "src/app/actions/movie.actions.ts",
+                    "description": "",
+                    "kind": 168
+                }
+            ],
+            "src/app/actions/auth.actions.ts": [
+                {
+                    "name": "Actions",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "Login | Logout | Signup_Success | Signup | Load_Users | Load_Users_Success",
+                    "file": "src/app/actions/auth.actions.ts",
                     "description": "",
                     "kind": 168
                 }
@@ -4370,6 +4382,26 @@
                 "name": "PageComponent",
                 "coveragePercent": 0,
                 "coverageCount": "0/5",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/signup.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Primary",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/signup.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
                 "status": "low"
             },
             {
