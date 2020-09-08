@@ -9,7 +9,7 @@
             <label htmlFor="name">
                 Name
             </label>
-            <input type="text" name="name" id="" [(ngModel)]="Movie.name" required>
+            <input type="text" name="name" [(ngModel)]="Movie.name" required>
         </div>
 
 
@@ -17,21 +17,21 @@
             <label htmlFor="genre">
                 Genre
             </label>
-            <input type="text" name="genre" id="" [(ngModel)]="Movie.genre" required>
+            <input type="text" name="genre" [(ngModel)]="Movie.genre" required>
         </div>
 
         <div class="info">
             <label htmlFor="rating">
                 Rating
             </label>
-            <input type="number" name="rating" id="" min="1" max="10" step="0.1" [(ngModel)]="Movie.rating" required>
+            <input type="number" name="rating" min="1" max="10" step="0.1" [(ngModel)]="Movie.rating" required>
         </div>
 
         <div class="info">
             <label htmlFor="cast">
                 Cast
             </label>
-            <input type="text" name="cast" id="" [(ngModel)]="joinedCast" required>
+            <input type="text" name="cast" [(ngModel)]="joinedCast" required>
         </div>
 
         <div class="info">
