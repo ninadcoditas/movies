@@ -3,29 +3,40 @@ import { CommonModule } from '@angular/common';
 // also exported from '@storybook/angular' if you can deal with breaking changes in 6.1
 import { Story, Meta } from '@storybook/angular/types-6-0';
 
-import Button from './button.component';
-import Header from './header.component';
+import { HeaderComponent } from './components'
+import { ThemeService } from '../app/services/theme.service'
+import { StoreModule } from '@ngrx/store';
+import { authreducer } from '../app/reducers/auth.reducer'
 
 export default {
   title: 'Example/Header',
-  component: Header,
+  component: HeaderComponent,
   decorators: [
     moduleMetadata({
-      declarations: [Button],
-      imports: [CommonModule],
+      declarations: [],
+      imports: [CommonModule,
+        StoreModule.forRoot({
+          auth: authreducer
+        })],
+      providers: [ThemeService]
     }),
   ],
-} as Meta;
+  argTypes: {
+    isLoggedIn: false
+  },
+} as unknown as Meta;
 
-const Template: Story<Header> = (args: Header) => ({
-  component: Header,
+const Template: Story<HeaderComponent> = (args: HeaderComponent) => ({
+  component: HeaderComponent,
   props: args,
 });
 
 export const LoggedIn = Template.bind({});
 LoggedIn.args = {
-  user: {},
+  isLoggedIn: true
 };
 
 export const LoggedOut = Template.bind({});
-LoggedOut.args = {};
+LoggedOut.args = {
+  isLoggedIn: false
+};

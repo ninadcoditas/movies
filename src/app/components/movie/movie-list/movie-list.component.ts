@@ -34,13 +34,14 @@ import { ThemeService } from '../../../services/theme.service';
 export class MovieListComponent implements OnInit {
 
   // movielist: Array<Movie>;
-  movielist: Observable<Movie[]>;
+  // movielist: Observable<Movie[]>;
+  movielist = []
   isLoggedIn: Observable<any>;
 
   faEdit: IconDefinition = faEdit;
-  faLightbulb: IconDefinition;
+  // faLightbulb: IconDefinition;
   faTrash: IconDefinition = faTrash;
-  faDollarSign = faDollarSign;
+  // faDollarSign = faDollarSign;
 
   subscription
   constructor(
@@ -49,7 +50,11 @@ export class MovieListComponent implements OnInit {
     private router: Router,
     public themeService: ThemeService
   ) {
-    this.movielist = store.select('movie');
+    this.subscription = this.store.select('movie').subscribe((data) => {
+      this.movielist = data
+    })
+
+    // this.movielist = [];
 
   }
 
@@ -89,11 +94,11 @@ export class MovieListComponent implements OnInit {
     if (this.themeService.isDarkTheme()) {
       this.faEdit = faRegularEdit;
       this.faTrash = faRegularTrash;
-      this.faLightbulb = faRegularLightbulb;
+      // this.faLightbulb = faRegularLightbulb;
     } else {
       this.faEdit = faSolidEdit;
       this.faTrash = faSolidTrash;
-      this.faLightbulb = faSolidLightbulb;
+      // this.faLightbulb = faSolidLightbulb;
     }
   }
 
