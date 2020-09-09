@@ -1,6 +1,6 @@
 <div class="list">
-    <ng-container *ngIf="(movielist | async).length>0; else elseTemplate">
-        <div *ngFor="let movie of movielist | async" class="card">
+    <ng-container *ngIf="movielist?.length>0; else elseTemplate">
+        <div *ngFor="let movie of movielist" class="card">
             <div>
                 <movie-card [movie]="movie"></movie-card>
             </div>

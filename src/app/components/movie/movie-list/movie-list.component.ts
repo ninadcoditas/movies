@@ -34,7 +34,8 @@ import { ThemeService } from 'src/app/services/theme.service';
 export class MovieListComponent implements OnInit {
 
   // movielist: Array<Movie>;
-  movielist: Observable<Movie[]>;
+  // movielist: Observable<Movie[]>;
+  movielist = []
   isLoggedIn: Observable<any>;
 
   faEdit: IconDefinition = faEdit;
@@ -49,7 +50,11 @@ export class MovieListComponent implements OnInit {
     private router: Router,
     public themeService: ThemeService
   ) {
-    this.movielist = store.select('movie');
+    this.subscription = this.store.select('movie').subscribe((data) => {
+      this.movielist = data
+    })
+
+    // this.movielist = [];
 
   }
 

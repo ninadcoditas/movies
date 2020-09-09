@@ -1743,59 +1743,6 @@
             "outputsClass": [],
             "propertiesClass": [
                 {
-                    "name": "faDollarSign",
-                    "defaultValue": "faDollarSign",
-                    "type": "",
-                    "optional": false,
-                    "description": "",
-                    "line": 35
-                },
-                {
-                    "name": "faEdit",
-                    "type": "IconDefinition",
-                    "optional": false,
-                    "description": "",
-                    "line": 32
-                },
-                {
-                    "name": "faLightbulb",
-                    "type": "IconDefinition",
-                    "optional": false,
-                    "description": "",
-                    "line": 33
-                },
-                {
-                    "name": "faTrash",
-                    "type": "IconDefinition",
-                    "optional": false,
-                    "description": "",
-                    "line": 34
-                },
-                {
-                    "name": "isDark",
-                    "type": "boolean",
-                    "optional": false,
-                    "description": "",
-                    "line": 36
-                },
-                {
-                    "name": "isLoggedIn",
-                    "type": "boolean",
-                    "optional": false,
-                    "description": "",
-                    "line": 29
-                },
-                {
-                    "name": "store",
-                    "type": "Store<AppState>",
-                    "optional": false,
-                    "description": "",
-                    "line": 38,
-                    "modifierKind": [
-                        114
-                    ]
-                },
-                {
                     "name": "subscription",
                     "type": "",
                     "optional": false,
@@ -2201,70 +2148,7 @@
             "viewProviders": [],
             "inputsClass": [],
             "outputsClass": [],
-            "propertiesClass": [
-                {
-                    "name": "faDollarSign",
-                    "defaultValue": "faDollarSign",
-                    "type": "",
-                    "optional": false,
-                    "description": "",
-                    "line": 43
-                },
-                {
-                    "name": "faEdit",
-                    "defaultValue": "faEdit",
-                    "type": "IconDefinition",
-                    "optional": false,
-                    "description": "",
-                    "line": 40
-                },
-                {
-                    "name": "faLightbulb",
-                    "type": "IconDefinition",
-                    "optional": false,
-                    "description": "",
-                    "line": 41
-                },
-                {
-                    "name": "faTrash",
-                    "defaultValue": "faTrash",
-                    "type": "IconDefinition",
-                    "optional": false,
-                    "description": "",
-                    "line": 42
-                },
-                {
-                    "name": "isLoggedIn",
-                    "type": "Observable<any>",
-                    "optional": false,
-                    "description": "",
-                    "line": 38
-                },
-                {
-                    "name": "movielist",
-                    "type": "Observable<Movie[]>",
-                    "optional": false,
-                    "description": "",
-                    "line": 37
-                },
-                {
-                    "name": "subscription",
-                    "type": "",
-                    "optional": false,
-                    "description": "",
-                    "line": 45
-                },
-                {
-                    "name": "themeService",
-                    "type": "ThemeService",
-                    "optional": false,
-                    "description": "",
-                    "line": 50,
-                    "modifierKind": [
-                        114
-                    ]
-                }
-            ],
+            "propertiesClass": [],
             "methodsClass": [
                 {
                     "name": "deleteMovie",
@@ -2274,51 +2158,13 @@
                             "type": "number"
                         }
                     ],
-                    "optional": false,
-                    "returnType": "void",
-                    "typeParameters": [],
                     "line": 63,
-                    "jsdoctags": [
-                        {
-                            "name": "id",
-                            "type": "number",
-                            "tagName": {
-                                "text": "param"
-                            }
-                        }
-                    ]
-                },
-                {
-                    "name": "ngOnChanges",
-                    "args": [],
-                    "optional": false,
-                    "returnType": "void",
-                    "typeParameters": [],
-                    "line": 82
+                    "description": "Called to delete particular movie"
                 },
                 {
                     "name": "ngOnDestroy",
-                    "args": [],
-                    "optional": false,
-                    "returnType": "void",
-                    "typeParameters": [],
+                    "description": "Called to destroy subscription",
                     "line": 100
-                },
-                {
-                    "name": "ngOnInit",
-                    "args": [],
-                    "optional": false,
-                    "returnType": "void",
-                    "typeParameters": [],
-                    "line": 56
-                },
-                {
-                    "name": "setLightbulb",
-                    "args": [],
-                    "optional": false,
-                    "returnType": "void",
-                    "typeParameters": [],
-                    "line": 88
                 },
                 {
                     "name": "updateMovie",
@@ -2328,19 +2174,8 @@
                             "type": "Movie"
                         }
                     ],
-                    "optional": false,
-                    "returnType": "void",
-                    "typeParameters": [],
                     "line": 67,
-                    "jsdoctags": [
-                        {
-                            "name": "movie",
-                            "type": "Movie",
-                            "tagName": {
-                                "text": "param"
-                            }
-                        }
-                    ]
+                    "description": "Redirects to update movie page"
                 }
             ],
             "hostBindings": [],
