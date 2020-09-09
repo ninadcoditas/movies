@@ -27,8 +27,6 @@ import { MovieEffects } from './effects/movie.effects'
 import { environment } from '../environments/environment';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
-import { Rating } from './custom-components/Rating';
-customElements.define('movie-rating', Rating);
 
 import { Cast } from './custom-components/Cast';
 customElements.define('movie-cast', Cast);
