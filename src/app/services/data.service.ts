@@ -6,9 +6,6 @@ import { User } from '../model/User'
 @Injectable({
   providedIn: 'root'
 })
-
-// change from story
-
 export class DataService {
 
   constructor(private http: HttpClient) { }
