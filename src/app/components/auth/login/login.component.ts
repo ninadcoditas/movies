@@ -2,10 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { AppState } from '../../../app.state'
 import { Router } from '@angular/router'
-
-import { Observable } from 'rxjs';
 import * as AuthActions from '../../../actions/auth.actions'
 import { User } from '../../../model/User';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
@@ -15,27 +14,36 @@ import { User } from '../../../model/User';
 export class LoginComponent implements OnInit {
   isLoggedIn;
   subscription
-  constructor(public store: Store<AppState>, public router: Router) {
-    this.isLoggedIn = store.select("auth");
-  }
 
-  User: User = {} as User;
+  loginForm: FormGroup
+
+  constructor(public store: Store<AppState>, public router: Router) { }
 
   ngOnInit(): void {
-
-  }
-
-  Login() {
-    this.store.dispatch(new AuthActions.Login(this.User))
 
     this.subscription = this.store.select("auth").subscribe((data) => {
       this.isLoggedIn = data["isLoggedIn"]
     });
 
-    this.isLoggedIn == true ? this.router.navigate(['/home']) : alert("invalid creds");
+    this.loginForm = new FormGroup({
+      username: new FormControl('', Validators.required),
+      password: new FormControl('', Validators.required)
+    })
   }
 
-  // ngOnDestroy() {
-  //   this.subscription.unsubscribe()
-  // }
+  Login() {
+
+    // console.log(this.loginForm.value)
+
+    this.store.dispatch(new AuthActions.Login(this.loginForm.value))
+    this.subscription = this.store.select("auth").subscribe((data) => {
+      this.isLoggedIn = data["isLoggedIn"]
+    });
+    this.isLoggedIn == true ? this.router.navigate(['/home']) : alert("Password or username is incorrect");
+
+  }
+
+  ngOnDestroy() {
+    this.subscription.unsubscribe()
+  }
 }
