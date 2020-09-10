@@ -1,7 +1,5 @@
 <div class="container">
-
-
-    <form (ngSubmit)="onSubmit()" ngNativeValidate>
+    <form (ngSubmit)="addMovie()" [formGroup]="addMovieForm">
         <div class="info">
             <h2>Add Movie details</h2>
         </div>
@@ -9,34 +7,40 @@
             <label htmlFor="name">
                 Name
             </label>
-            <input type="text" name="name" [(ngModel)]="Movie.name" required>
+            <input type="text" name="name" class="form-control" formControlName="name">
+            <div *ngIf="!addMovieForm.get('name').valid && addMovieForm.get('name').touched">
+                Please enter name of movie
+            </div>
         </div>
-
-
         <div class="info">
             <label htmlFor="genre">
                 Genre
             </label>
-            <input type="text" name="genre" [(ngModel)]="Movie.genre" required>
+            <input type="text" name="genre" class="form-control" formControlName="genre">
+            <div *ngIf="!addMovieForm.get('genre').valid && addMovieForm.get('genre').touched">
+                Please enter genre of movie
+            </div>
         </div>
-
         <div class="info">
             <label htmlFor="rating">
                 Rating
             </label>
-            <input type="number" name="rating" min="1" max="10" step="0.1" [(ngModel)]="Movie.rating" required>
+            <input type="number" name="rating" class="form-control" step="0.1" formControlName="rating">
+            <div *ngIf="!addMovieForm.get('rating').valid && addMovieForm.get('rating').touched">
+                Rating should be in range 0 - 10
+            </div>
         </div>
-
         <div class="info">
             <label htmlFor="cast">
                 Cast
             </label>
-            <input type="text" name="cast" [(ngModel)]="joinedCast" required>
+            <input type="text" name="cast" class="form-control" formControlName="cast">
+            <div *ngIf="!addMovieForm.get('cast').valid && addMovieForm.get('cast').touched">
+                Please enter cast of movie
+            </div>
         </div>
-
         <div class="info">
-            <input type="submit" value="Add Movie" class="button addMovie">
-
+            <input type="submit" value="Add Movie" class="button addMovie" [disabled]="!addMovieForm.valid">
         </div>
     </form>
 </div>

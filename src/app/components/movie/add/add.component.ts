@@ -7,6 +7,7 @@ import { Movie } from '../../../model/Movie'
 import { Observable } from 'rxjs';
 
 import * as MovieActions from '../../../actions/movie.actions'
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 @Component({
   selector: 'app-add',
   templateUrl: './add.component.html',
@@ -18,18 +19,21 @@ export class AddComponent implements OnInit {
 
   Movie: Movie = {} as Movie;
   joinedCast: string = "";
+
+  addMovieForm: FormGroup;
   ngOnInit(): void {
+    this.addMovieForm = new FormGroup({
+      name: new FormControl('', Validators.required),
+      genre: new FormControl('', Validators.required),
+      rating: new FormControl(0, [Validators.required, Validators.min(0), Validators.max(10)]),
+      cast: new FormControl('', Validators.required)
+    })
   }
 
-  onSubmit() {
-    // this.Movie.id = Math.floor(Math.random() * 100)
-    this.addMovie(this.Movie)
-  }
-
-  addMovie(movieObj: Movie) {
-    this.Movie.rating = parseFloat(this.Movie.rating.toString())
-    this.Movie.cast = this.joinedCast.split(";").filter((x) => x.trim() != "")
-    this.store.dispatch(new MovieActions.AddMovie(movieObj));
+  addMovie() {
+    this.addMovieForm.value.rating = parseFloat(this.addMovieForm.value.rating.toString())
+    this.addMovieForm.value.cast = this.addMovieForm.value.cast.split(";").filter((x) => x.trim() != "")
+    this.store.dispatch(new MovieActions.AddMovie(this.addMovieForm.value));
     this.router.navigate(['home'])
   }
 
