@@ -11,9 +11,7 @@ export class AuthGuardService implements CanActivate {
     isLoggedIn
     async canActivate(): Promise<boolean> {
         this.isLoggedIn = await this.helper()
-
-
-        debugger;
+        // debugger;
         if (this.isLoggedIn == false) {
             this.router.navigate(['home'])
             return false
