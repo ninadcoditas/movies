@@ -1,11 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
-
+import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { AppState } from '../../../app.state'
-import { Movie } from '../../../model/Movie'
-import { Observable } from 'rxjs';
-
 import * as MovieActions from '../../../actions/movie.actions'
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 @Component({
@@ -16,9 +12,6 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 export class AddComponent implements OnInit {
 
   constructor(private store: Store<AppState>, private router: Router) { }
-
-  Movie: Movie = {} as Movie;
-  joinedCast: string = "";
 
   addMovieForm: FormGroup;
   ngOnInit(): void {

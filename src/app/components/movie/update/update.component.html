@@ -1,5 +1,5 @@
 <div class="container">
-    <form (ngSubmit)="onSubmit()" ngNativeValidate>
+    <form (ngSubmit)="onSubmit()" [formGroup]="updateMovieForm">
         <div class="info">
             <h2>Update Movie details</h2>
         </div>
@@ -7,31 +7,50 @@
             <label htmlFor="name">
                 Name
             </label>
-            <input type="text" name="name" id="" [(ngModel)]="Movie.name" required>
+            <input type="text" name="name" class="form-control" formControlName="name">
+
+            <div *ngIf="!updateMovieForm.get('name').valid && updateMovieForm.get('name').touched">
+                Please enter name of movie
+            </div>
+
         </div>
         <div class="info">
             <label htmlFor="genre">
                 Genre
             </label>
-            <input type="text" name="genre" id="" [(ngModel)]="Movie.genre" required>
+            <input type="text" name="genre" class="form-control" formControlName="genre">
+
+            <div *ngIf="!updateMovieForm.get('genre').valid && updateMovieForm.get('genre').touched">
+                Please enter genre of movie
+            </div>
+
         </div>
 
         <div class="info">
             <label htmlFor="rating">
                 Rating
             </label>
-            <input type="number" name="rating" id="" min="1" max="10" step="0.1" [(ngModel)]="Movie.rating" required>
+            <input type="number" name="rating" step="0.1" class="form-control" formControlName="rating">
+
+            <div *ngIf="!updateMovieForm.get('rating').valid && updateMovieForm.get('rating').touched">
+                Rating should be in range 0 - 10
+            </div>
+
         </div>
 
         <div class="info">
             <label htmlFor="cast">
                 Cast
             </label>
-            <input type="text" name="cast" id="" [(ngModel)]="joinedCast" required>
+            <input type="text" name="cast" class="form-control" formControlName="cast">
+            <div *ngIf="!updateMovieForm.get('cast').valid && updateMovieForm.get('cast').touched">
+                Please enter cast of movie
+            </div>
+
         </div>
         <div class="info">
-            <input type="submit" value="Update Movie" class="button updateMovie">
-
+            <input type="submit" value="Update Movie" class="button updateMovie"
+                [disabled]="!updateMovieForm.valid && !updateMovieForm.touched">
         </div>
     </form>
 </div>
