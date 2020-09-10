@@ -9,8 +9,10 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "docs:json": "compodoc -p ./tsconfig.base.json -e json -d .",
-    "storybook": "npm run docs:json && start-storybook -p 6006",
-    "build-storybook": "npm run docs:json && build-storybook"
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "npm run docs:json && build-storybook",
+    "build-storybook-docs": "build-storybook --docs",
+    "storybook-docs": "start-storybook --docs"
   },
   "jest": {
     "preset": "jest-preset-angular",
