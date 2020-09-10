@@ -1,11 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-
 import { Store } from '@ngrx/store';
 import { AppState } from '../../../app.state'
-import { Observable } from 'rxjs';
 import * as AuthActions from '../../../actions/auth.actions'
-import { User } from '../../../model/User';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.component.html',
@@ -13,20 +11,20 @@ import { User } from '../../../model/User';
 })
 export class SignupComponent implements OnInit {
 
-  constructor(public store: Store<AppState>, public router: Router) {
+  constructor(public store: Store<AppState>, public router: Router) { }
 
-  }
+  signupForm: FormGroup;
 
-  User: User = {} as User;
   ngOnInit(): void {
-
+    this.signupForm = new FormGroup({
+      username: new FormControl('', Validators.required),
+      password: new FormControl('', Validators.required)
+    })
   }
 
   SignUp() {
-
-    // this.User.id = Math.floor(Math.random() * 100);
-    this.store.dispatch(new AuthActions.Signup(this.User))
+    // console.log(this.signupForm.value)
+    this.store.dispatch(new AuthActions.Signup(this.signupForm.value))
     this.router.navigate(['/login']);
-
   }
 }

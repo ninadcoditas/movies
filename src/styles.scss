@@ -115,6 +115,10 @@ input {
   border: $input-border-width solid $input-border-color;
 }
 
+input:disabled{
+  opacity: 0.6;
+}
+
 input[type="submit"] ,.button{
   padding: $input-submit-padding;
   // margin: .5rem 0 0;
@@ -130,6 +134,7 @@ input[type="submit"] ,.button{
    width: auto;
 
 }
+
 
 
 .flex-center{

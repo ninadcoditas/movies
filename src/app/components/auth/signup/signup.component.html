@@ -1,15 +1,16 @@
 <div class="container">
-
-
-    <form (ngSubmit)="SignUp()" ngNativeValidate>
+    <form (ngSubmit)="SignUp()" [formGroup]="signupForm">
         <div class="info">
             <h2>Sign Up Form</h2>
         </div>
-        <div class="info">
+        <div class="info ">
             <label htmlFor="username">
                 Username
             </label>
-            <input type="text" name="username" id="" [(ngModel)]="User.username" required>
+            <input type="text" name="username" class="form-control" formControlName="username">
+            <div *ngIf="!signupForm.get('username').valid && signupForm.get('username').touched">
+                Please enter a username
+            </div>
         </div>
 
 
@@ -17,11 +18,14 @@
             <label htmlFor="password">
                 Password
             </label>
-            <input type="password" name="password" id="" required [(ngModel)]="User.password" required>
+            <input type="password" name="password" class="form-control" formControlName="password">
+            <div *ngIf="!signupForm.get('password').valid && signupForm.get('password').touched">
+                Please enter a password
+            </div>
         </div>
 
         <div class="info">
-            <input type="submit" value="Sign Up" class="signup button">
+            <input type="submit" value="Sign Up" class="signup button" [disabled]="!signupForm.valid">
         </div>
     </form>
 </div>
