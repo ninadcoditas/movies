@@ -1,39 +1,38 @@
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { LoginComponent } from './login.component';
-import { FormBuilder } from '@angular/forms';
 
 describe('LoginComponent', () => {
-    let fixture: LoginComponent;
-    // let authServiceMock: any;
-    // let formBuilderMock: FormBuilder;
+    let component: LoginComponent;
+    let fixture: ComponentFixture<LoginComponent>;
 
-    let routerMock: any;
-    let storeMock: any;
+    beforeEach(async(() => {
+        TestBed.configureTestingModule({
+            declarations: [LoginComponent]
+        })
+            .compileComponents();
+    }));
 
     beforeEach(() => {
-        // authServiceMock = {
-        //     login: jest.fn()
-        // };
-        // formBuilderMock = new FormBuilder();
-
-
-        routerMock = jest.fn();
-        fixture = new LoginComponent(
-            storeMock,
-            routerMock
-        );
-        fixture.ngOnInit();
+        fixture = TestBed.createComponent(LoginComponent);
+        component = fixture.componentInstance;
+        fixture.detectChanges();
     });
 
-    describe('Test: ngOnInit', () => {
-        it('should initialize loginForm', () => {
-            const loginForm = {
-                username: '',
-                password: ''
-            };
-            expect(fixture.User).toEqual(loginForm.username);
-            expect(fixture.User.password).toEqual(loginForm.password);
-        });
+    it('should create', () => {
+        expect(component).toBeTruthy();
     });
+
+
+    // describe('Test: ngOnInit', () => {
+    //     it('should initialize loginForm', () => {
+    //         const loginForm = {
+    //             username: '',
+    //             password: ''
+    //         };
+    //         expect(fixture.User).toEqual(loginForm.username);
+    //         expect(fixture.User.password).toEqual(loginForm.password);
+    //     });
+    // });
 
     // describe('Test: Login Form', () => {
     //     it('should invalidate the form', () => {
