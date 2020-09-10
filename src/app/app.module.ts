@@ -6,6 +6,8 @@ import { FormsModule } from '@angular/forms';
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { AppRoutingModule } from './app-routing.module';
+
+
 import { AppComponent } from './app.component';
 
 import { MovieListComponent } from './components/movie/movie-list/movie-list.component';
