@@ -13,6 +13,7 @@ import {
     AddComponent
 } from './components';
 import { RouterModule } from '@angular/router';
+import { ReactiveFormsModule } from '@angular/forms'
 
 export default {
     title: 'Example/AddMovie',
@@ -23,6 +24,7 @@ export default {
             imports: [
                 CommonModule,
                 FontAwesomeModule,
+                ReactiveFormsModule,
                 RouterModule.forRoot([], { useHash: true }),
                 StoreModule.forRoot({
                     auth: authreducer
