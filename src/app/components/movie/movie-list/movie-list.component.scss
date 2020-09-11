@@ -1,20 +1,39 @@
+
 .card{
-    margin: 10px;
+     margin: 10px;
     padding: 10px;
     background-color: var(--card-background);
     color:var(--text-color);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    img{
+
+    .card-content{
+        display: flex;
+        justify-content: space-between;
+        .detail-image{
+            display: flex;
+
+            img{
+                max-height: 30vh;
+                max-width: 14vw;
+            }
+        }
+    }
+
+    .card-actions{
+         img{
         height: 20px;
         width: 20px;
         cursor: pointer;
-    }
-    span{
+        }
+        span{
         cursor: pointer;
+        }
+            align-items: center;
+    display: flex;
     }
 }
+
+
+
 
 .list{
     background-color: var( --list-background);

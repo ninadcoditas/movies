@@ -18,6 +18,7 @@ export default {
                 rating: 9.3,
                 cast: ["Tim Robbins", "Morgan Free", "Bob Guntonman"],
                 id: 2,
+                "image": "https://images-na.ssl-images-amazon.com/images/I/71jzMH-kHQL._AC_SY679_.jpg"
             },
             {
                 "name": "The Dark Knight",
@@ -29,6 +30,7 @@ export default {
                     "Morgan Freeman"
                 ],
                 "id": 1,
+                "image": "https://images-na.ssl-images-amazon.com/images/I/71jzMH-kHQL._AC_SY679_.jpg"
             }
         ],
     },
@@ -62,6 +64,7 @@ Filled.args = {
             rating: 9.3,
             cast: ["Tim Robbins", "Morgan Free", "Bob Guntonman"],
             id: 2,
+            "image": "https://imgc.allpostersimages.com/img/print/u-g-F4S6WB0.jpg?w=550&h=550&p=0"
         },
         {
             "name": "The Dark Knight",
@@ -73,6 +76,7 @@ Filled.args = {
                 "Morgan Freeman"
             ],
             "id": 1,
+            "image": "https://images-na.ssl-images-amazon.com/images/I/71jzMH-kHQL._AC_SY679_.jpg"
         }
     ]
 };

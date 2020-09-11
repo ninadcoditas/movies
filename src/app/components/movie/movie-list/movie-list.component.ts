@@ -76,6 +76,15 @@ export class MovieListComponent implements OnInit {
     }
   }
 
+  getImage(img) {
+    if (img.trim().length > 0) {
+      return img
+    }
+    else {
+      return ""
+    }
+  }
+
 
 
   ngOnDestroy(): void {

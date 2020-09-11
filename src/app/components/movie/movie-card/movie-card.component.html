@@ -1,20 +1,22 @@
 <div>
-    <div class="info">
-        Name: {{this.movie.name}}
+    <div class="info movie-name">
+        {{this.movie.name}}
     </div>
 
-    <div class="info">
-        Genre: {{this.movie.genre}}
+    <div class="info movie-genre">
+        {{this.movie.genre}}
     </div>
 
-    <div class="info">
-        Rating : {{movie.rating}} / 10
+    <div class="info movie-rating">
+        <!-- <fa-icon [icon]="faStar" class="star"></fa-icon> {{movie.rating}} -->
+        <span><img src="assets/image/star.svg" /></span>
+
+        <span> {{movie.rating}} </span>
     </div>
 
-    <div class="info">
-
+    <div class="info movie-cast">
         <movie-cast>
-            Cast:
+            Cast
             <li slot="name" *ngFor="let member of movie.cast">{{member}}</li>
         </movie-cast>
     </div>

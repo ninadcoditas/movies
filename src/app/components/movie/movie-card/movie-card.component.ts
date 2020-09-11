@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Movie } from '../../../model/Movie';
+import { IconDefinition, faStar } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'movie-card',
@@ -9,6 +10,7 @@ import { Movie } from '../../../model/Movie';
 export class MovieCardComponent implements OnInit {
 
   @Input() movie: Movie;
+  faStar: IconDefinition = faStar;
   constructor() { }
 
   ngOnInit(): void {

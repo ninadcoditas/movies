@@ -22,10 +22,11 @@
         "Morgan Freeman"
       ],
       "id": 1,
-      "navigationId": 2
+      "navigationId": 2,
+      "image": "https://images-na.ssl-images-amazon.com/images/I/71jzMH-kHQL._AC_SY679_.jpg"
     },
     {
-      "name": "The Shawshank Redemption ",
+      "name": "The Shawshank",
       "genre": "Drama ",
       "rating": 9.3,
       "cast": [
@@ -34,7 +35,7 @@
         "Bob Guntonman"
       ],
       "id": 2,
-      "navigationId": 2
+      "image": "https://imgc.allpostersimages.com/img/print/u-g-F4S6WB0.jpg?w=550&h=550&p=0"
     },
     {
       "name": "Fight Club",
@@ -45,7 +46,8 @@
         "Brad Pitt ",
         " Meat Loaf"
       ],
-      "id": 3
+      "id": 3,
+      "image": "https://images-na.ssl-images-amazon.com/images/I/71jzMH-kHQL._AC_SY679_.jpg"
     },
     {
       "name": "Inception",
@@ -56,7 +58,8 @@
         "Joseph Gordon-Levitt",
         "Ellen Page"
       ],
-      "id": 4
+      "id": 4,
+      "image": "https://images-na.ssl-images-amazon.com/images/I/71jzMH-kHQL._AC_SY679_.jpg"
     },
     {
       "name": "The Matrix",
@@ -67,7 +70,8 @@
         "Laurence Fishburne",
         "Carrie-Anne Moss"
       ],
-      "id": 5
+      "id": 5,
+      "image": "https://images-na.ssl-images-amazon.com/images/I/71jzMH-kHQL._AC_SY679_.jpg"
     }
   ]
 }

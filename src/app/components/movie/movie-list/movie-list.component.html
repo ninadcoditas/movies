@@ -1,17 +1,36 @@
 <div class="list">
     <ng-container *ngIf="movielist?.length>0; else elseTemplate">
         <div *ngFor="let movie of movielist" class="card">
-            <div>
-                <movie-card [movie]="movie"></movie-card>
+            <div class="card-content">
+                <div class="detail-image">
+                    <div class="movie-image">
+                        <ng-container *ngIf="movie.image!=''; else noImage">
+                            <img src="{{movie.image}}">
+                        </ng-container>
+                        <ng-template #noImage>
+                            <img src="https://sisterhoodofstyle.com/wp-content/uploads/2018/02/no-image-1.jpg" />
+                        </ng-template>
+
+
+                    </div>
+                    <div class="detail">
+                        <movie-card [movie]="movie"></movie-card>
+                    </div>
+                </div>
+
+                <div class="card-actions">
+                    <div *ngIf="this.isLoggedIn">
+                        <span (click)=updateMovie(movie)>
+                            <fa-icon [icon]="faEdit"></fa-icon>
+                        </span>
+                        <span class="ml-10" (click)="deleteMovie(movie.id)">
+                            <fa-icon [icon]="faTrash"></fa-icon>
+                        </span>
+                    </div>
+                </div>
             </div>
-            <div *ngIf="this.isLoggedIn">
-                <span (click)=updateMovie(movie)>
-                    <fa-icon [icon]="faEdit"></fa-icon>
-                </span>
-                <span class="ml-10" (click)="deleteMovie(movie.id)">
-                    <fa-icon [icon]="faTrash"></fa-icon>
-                </span>
-            </div>
+
+
         </div>
     </ng-container>
     <ng-template #elseTemplate>

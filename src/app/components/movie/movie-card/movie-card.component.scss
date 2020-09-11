@@ -1,3 +1,20 @@
 .info{
     line-height: 1;
+    
+    &.movie-rating{
+        img{
+            height: 15px;
+            widows: 15px;
+        }
+    }
+
+    &.movie-name{
+        font-weight: 600;
+        font-size: 24px;
+    }
+    &movie.genre,&.movie-rating,&.movie-cast{
+        font-size: 14px;
+    }
 }
+
+
