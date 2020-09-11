@@ -13,28 +13,9 @@ $body-bg: #eceff1;
 
 // themes
 :root {
-  /* Colors */
-  --foreground-default: #08090a;
-  --foreground-secondary: #41474d;
-  --foreground-tertiary: #797c80;
-  --foreground-quaternary: #f4faff;
-  --foreground-light: #41474d;
-
-  --background-default: #f4faff;
-  --background-secondary: #a3b9cc;
-  --background-tertiary: #5c7d99;
-  --background-light: #ffffff;
-
-  --primary-default: #5dfdcb;
-  --primary-dark: #24b286;
-  --primary-light: #b2ffe7;
-
+  // mystyles
+--primary-dark: #24b286;
   --error-default: #ef3e36;
-  --error-dark: #800600;
-  --error-light: #ffcecc;
-  /* Shadows */
-  --background-tertiary-shadow: 0 1px 3px 0 rgba(92, 125, 153, 0.5);
-
   --text-color:black;
   --body-background: "#FFFFFF";
   --signup:#3277B3;
@@ -134,8 +115,6 @@ input[type="submit"] ,.button{
    width: auto;
 
 }
-
-
 
 .flex-center{
   display: flex;

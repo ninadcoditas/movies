@@ -19,10 +19,6 @@
         Add Movie
     </button>
 
-    <!-- <nav>
-        <fa-icon [icon]="faLightbulb" (click)="toggleTheme()"></fa-icon>
-    </nav> -->
-
     <button (click)="toggleTheme()" class="button theme ml-10">
         <ng-container *ngIf="this.themeService.isDarkTheme(); else darkTemplate">
             Light Theme

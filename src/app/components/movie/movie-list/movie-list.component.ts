@@ -33,15 +33,11 @@ import { ThemeService } from '../../../services/theme.service';
 })
 export class MovieListComponent implements OnInit {
 
-  // movielist: Array<Movie>;
-  // movielist: Observable<Movie[]>;
+
   movielist = []
   isLoggedIn: Observable<any>;
-
   faEdit: IconDefinition = faEdit;
-  // faLightbulb: IconDefinition;
   faTrash: IconDefinition = faTrash;
-  // faDollarSign = faDollarSign;
 
   subscription
   constructor(
@@ -53,9 +49,6 @@ export class MovieListComponent implements OnInit {
     this.subscription = this.store.select('movie').subscribe((data) => {
       this.movielist = data
     })
-
-    // this.movielist = [];
-
   }
 
   ngOnInit(): void {
@@ -73,38 +66,19 @@ export class MovieListComponent implements OnInit {
     this.router.navigate(['/updatemovie'], { state: movie })
   }
 
-
-  // toggleTheme() {
-  //   if (this.themeService.isDarkTheme()) {
-  //     this.themeService.setLightTheme();
-  //   } else {
-  //     this.themeService.setDarkTheme();
-  //   }
-
-  //   this.setLightbulb();
-  // }
-
   ngOnChanges(): void {
-    //Called before any other lifecycle hook. Use it to inject dependencies, but avoid any serious work here.
-    //Add '${implements OnChanges}' to the class.
-    this.setLightbulb()
-  }
-
-  setLightbulb() {
     if (this.themeService.isDarkTheme()) {
       this.faEdit = faRegularEdit;
       this.faTrash = faRegularTrash;
-      // this.faLightbulb = faRegularLightbulb;
     } else {
       this.faEdit = faSolidEdit;
       this.faTrash = faSolidTrash;
-      // this.faLightbulb = faSolidLightbulb;
     }
   }
 
+
+
   ngOnDestroy(): void {
-    //Called once, before the instance is destroyed.
-    //Add 'implements OnDestroy' to the class.
     this.subscription.unsubscribe()
   }
 }
