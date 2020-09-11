@@ -19,7 +19,8 @@ export class AddComponent implements OnInit {
       name: new FormControl('', Validators.required),
       genre: new FormControl('', Validators.required),
       rating: new FormControl(0, [Validators.required, Validators.min(0), Validators.max(10)]),
-      cast: new FormControl('', Validators.required)
+      cast: new FormControl('', Validators.required),
+      image: new FormControl('', Validators.required)
     })
   }
 

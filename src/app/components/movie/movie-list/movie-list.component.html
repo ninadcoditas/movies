@@ -4,14 +4,7 @@
             <div class="card-content">
                 <div class="detail-image">
                     <div class="movie-image">
-                        <ng-container *ngIf="movie.image!=''; else noImage">
-                            <img src="{{movie.image}}">
-                        </ng-container>
-                        <ng-template #noImage>
-                            <img src="https://sisterhoodofstyle.com/wp-content/uploads/2018/02/no-image-1.jpg" />
-                        </ng-template>
-
-
+                        <img [src]="getImage(movie.image)" alt="" srcset="">
                     </div>
                     <div class="detail">
                         <movie-card [movie]="movie"></movie-card>

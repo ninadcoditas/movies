@@ -31,6 +31,17 @@
             </div>
         </div>
         <div class="info">
+            <label htmlFor="image">
+                Poster
+            </label>
+            <input type="text" name="image" class="form-control" formControlName="image">
+
+            <div *ngIf="!addMovieForm.get('image').valid && addMovieForm.get('image').touched">
+                Please enter source of poster
+            </div>
+
+        </div>
+        <div class="info">
             <label htmlFor="cast">
                 Cast
             </label>

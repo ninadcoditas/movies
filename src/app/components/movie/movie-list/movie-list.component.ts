@@ -81,7 +81,7 @@ export class MovieListComponent implements OnInit {
       return img
     }
     else {
-      return ""
+      return "https://sisterhoodofstyle.com/wp-content/uploads/2018/02/no-image-1.jpg"
     }
   }
 

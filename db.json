@@ -26,16 +26,16 @@
       "image": "https://images-na.ssl-images-amazon.com/images/I/71jzMH-kHQL._AC_SY679_.jpg"
     },
     {
-      "name": "The Shawshank",
-      "genre": "Drama ",
-      "rating": 9.3,
+      "name": "Joker ",
+      "genre": " Crime, Drama, Thriller ",
+      "rating": 8.5,
       "cast": [
-        "Tim Robbins ",
-        " Morgan Free",
-        "Bob Guntonman"
+        "Joaquin Phoenix",
+        "Robert De Niro",
+        "Zazie Beetz"
       ],
       "id": 2,
-      "image": "https://imgc.allpostersimages.com/img/print/u-g-F4S6WB0.jpg?w=550&h=550&p=0"
+      "image": "https://m.media-amazon.com/images/M/MV5BNGVjNWI4ZGUtNzE0MS00YTJmLWE0ZDctN2ZiYTk2YmI3NTYyXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_.jpg"
     },
     {
       "name": "Fight Club",
@@ -47,7 +47,7 @@
         " Meat Loaf"
       ],
       "id": 3,
-      "image": "https://images-na.ssl-images-amazon.com/images/I/71jzMH-kHQL._AC_SY679_.jpg"
+      "image": "https://m.media-amazon.com/images/M/MV5BMmEzNTkxYjQtZTc0MC00YTVjLTg5ZTEtZWMwOWVlYzY0NWIwXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_UX182_CR0,0,182,268_AL_.jpg"
     },
     {
       "name": "Inception",
@@ -59,19 +59,19 @@
         "Ellen Page"
       ],
       "id": 4,
-      "image": "https://images-na.ssl-images-amazon.com/images/I/71jzMH-kHQL._AC_SY679_.jpg"
+      "image": "https://resizing.flixster.com/N7aWhwhd6Sm3_2D5qUQaK9M9t4U=/206x305/v1.bTsxMTE2NjcyNTtqOzE4NjI0OzEyMDA7ODAwOzEyMDA"
     },
     {
       "name": "The Matrix",
-      "rating": 8.6,
       "genre": "Action, Sci-Fi ",
+      "rating": 8.6,
       "cast": [
         " Keanu Reeves",
         "Laurence Fishburne",
         "Carrie-Anne Moss"
       ],
       "id": 5,
-      "image": "https://images-na.ssl-images-amazon.com/images/I/71jzMH-kHQL._AC_SY679_.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/en/thumb/c/c1/The_Matrix_Poster.jpg/220px-The_Matrix_Poster.jpg"
     }
   ]
 }

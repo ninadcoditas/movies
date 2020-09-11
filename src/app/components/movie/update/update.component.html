@@ -39,6 +39,18 @@
         </div>
 
         <div class="info">
+            <label htmlFor="image">
+                Poster
+            </label>
+            <input type="text" name="image" class="form-control" formControlName="image">
+
+            <div *ngIf="!updateMovieForm.get('image').valid && updateMovieForm.get('image').touched">
+                Please enter source of poster
+            </div>
+
+        </div>
+
+        <div class="info">
             <label htmlFor="cast">
                 Cast
             </label>
@@ -49,8 +61,7 @@
 
         </div>
         <div class="info">
-            <input type="submit" value="Update Movie" class="button updateMovie"
-                [disabled]="!updateMovieForm.valid && !updateMovieForm.touched">
+            <input type="submit" value="Update Movie" class="button updateMovie" [disabled]="!updateMovieForm.valid">
         </div>
     </form>
 </div>
