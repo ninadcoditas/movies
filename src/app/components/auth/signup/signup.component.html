@@ -25,6 +25,19 @@
         </div>
 
         <div class="info">
+            <label htmlFor="password">
+                Confirm Password
+            </label>
+            <input type="password" name="confirmPassword" class="form-control" formControlName="confirmPassword">
+            <div *ngIf="!signupForm.get('confirmPassword').valid && signupForm.get('confirmPassword').touched">
+                Passwords enter password again
+            </div>
+            <div *ngIf="signupForm.errors?.mismatch && signupForm.get('confirmPassword').touched">
+                Passwords do not match
+            </div>
+        </div>
+
+        <div class="info">
             <input type="submit" value="Sign Up" class="signup button" [disabled]="!signupForm.valid">
         </div>
     </form>

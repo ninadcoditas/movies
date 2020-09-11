@@ -39,6 +39,9 @@
             <div *ngIf="!addMovieForm.get('image').valid && addMovieForm.get('image').touched">
                 Please enter source of poster
             </div>
+            <div *ngIf="addMovieForm.get('image').errors?.image">
+                Image source is not valid
+            </div>
 
         </div>
         <div class="info">

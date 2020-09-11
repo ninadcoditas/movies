@@ -4,6 +4,8 @@ import { Store } from '@ngrx/store';
 import { AppState } from '../../../app.state'
 import * as MovieActions from '../../../actions/movie.actions'
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { ImageValidator } from '../../../custom-validators/image.validator'
+
 @Component({
   selector: 'app-update',
   templateUrl: './update.component.html',
@@ -24,7 +26,7 @@ export class UpdateComponent implements OnInit {
       rating: new FormControl(movieData.rating, [Validators.required, Validators.min(0), Validators.max(10)]),
       cast: new FormControl(movieData.cast, Validators.required),
       id: new FormControl(movieData.id),
-      image: new FormControl(movieData.image, Validators.required)
+      image: new FormControl(movieData.image, Validators.required, ImageValidator.bind(this))
     })
   }
 

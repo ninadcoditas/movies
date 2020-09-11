@@ -4,6 +4,7 @@ import { Store } from '@ngrx/store';
 import { AppState } from '../../../app.state'
 import * as AuthActions from '../../../actions/auth.actions'
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import ConfirmPasswordValidator from '../../../custom-validators/password.validator'
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.component.html',
@@ -18,8 +19,13 @@ export class SignupComponent implements OnInit {
   ngOnInit(): void {
     this.signupForm = new FormGroup({
       username: new FormControl('', Validators.required),
-      password: new FormControl('', Validators.required)
-    })
+      password: new FormControl('', Validators.required),
+      confirmPassword: new FormControl('', Validators.required)
+    },
+      {
+        validators: ConfirmPasswordValidator('password', 'confirmPassword')
+      }
+    )
   }
 
   SignUp() {

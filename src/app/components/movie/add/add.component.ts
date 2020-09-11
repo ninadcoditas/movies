@@ -4,6 +4,7 @@ import { Store } from '@ngrx/store';
 import { AppState } from '../../../app.state'
 import * as MovieActions from '../../../actions/movie.actions'
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { ImageValidator } from 'src/app/custom-validators/image.validator';
 @Component({
   selector: 'app-add',
   templateUrl: './add.component.html',
@@ -20,7 +21,7 @@ export class AddComponent implements OnInit {
       genre: new FormControl('', Validators.required),
       rating: new FormControl(0, [Validators.required, Validators.min(0), Validators.max(10)]),
       cast: new FormControl('', Validators.required),
-      image: new FormControl('', Validators.required)
+      image: new FormControl('', Validators.required, ImageValidator.bind(this))
     })
   }
 
