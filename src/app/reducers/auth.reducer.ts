@@ -3,7 +3,7 @@ import { Action, USER_RUNTIME_CHECKS } from '@ngrx/store'
 import * as AuthActions from '../actions/auth.actions'
 
 const initialState = {
-    isLoggedIn: true,
+    isLoggedIn: false,
     "users": [],
 }
 export function authreducer(state = initialState, action) {

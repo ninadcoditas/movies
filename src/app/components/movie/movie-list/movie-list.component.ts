@@ -11,15 +11,12 @@ import * as MovieActions from '../../../actions/movie.actions'
 
 
 import {
-  faLightbulb as faSolidLightbulb,
-  faDollarSign,
   IconDefinition,
   faEdit as faSolidEdit,
   faTrash as faSolidTrash
 } from "@fortawesome/free-solid-svg-icons";
 
 import {
-  faLightbulb as faRegularLightbulb,
   faEdit as faRegularEdit,
   faTrash as faRegularTrash
 } from '@fortawesome/free-solid-svg-icons';
@@ -36,14 +33,9 @@ export class MovieListComponent implements OnInit {
 
   movielist = []
   isLoggedIn: Observable<any>;
-  faEdit: IconDefinition = faEdit;
-  faTrash: IconDefinition = faTrash;
-
   subscription
   constructor(
-    private data: DataService,
     private store: Store<AppState>,
-    private router: Router,
     public themeService: ThemeService
   ) {
     this.subscription = this.store.select('movie').subscribe((data) => {
@@ -57,35 +49,6 @@ export class MovieListComponent implements OnInit {
     });
     this.store.dispatch(new MovieActions.LoadMovie())
   }
-
-  deleteMovie(id: number) {
-    this.store.dispatch(new MovieActions.DeleteMovie(id))
-  }
-
-  updateMovie(movie: Movie) {
-    this.router.navigate(['/updatemovie'], { state: movie })
-  }
-
-  ngOnChanges(): void {
-    if (this.themeService.isDarkTheme()) {
-      this.faEdit = faRegularEdit;
-      this.faTrash = faRegularTrash;
-    } else {
-      this.faEdit = faSolidEdit;
-      this.faTrash = faSolidTrash;
-    }
-  }
-
-  getImage(img) {
-    if (img.trim().length > 0) {
-      return img
-    }
-    else {
-      return "https://sisterhoodofstyle.com/wp-content/uploads/2018/02/no-image-1.jpg"
-    }
-  }
-
-
 
   ngOnDestroy(): void {
     this.subscription.unsubscribe()

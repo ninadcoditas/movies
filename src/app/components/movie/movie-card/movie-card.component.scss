@@ -1,13 +1,11 @@
 .info{
     line-height: 1;
-    
     &.movie-rating{
         img{
             height: 15px;
             widows: 15px;
         }
     }
-
     &.movie-name{
         font-weight: 600;
         font-size: 24px;
@@ -18,3 +16,53 @@
 }
 
 
+
+.card{
+     margin: 10px;
+    padding: 10px;
+    background-color: var(--card-background);
+    color:var(--text-color);
+
+    .card-content{
+        display: flex;
+        justify-content: space-between;
+        .detail-image{
+            display: flex;
+            img{
+                max-height: 30vh;
+                max-width: 14vw;
+            }
+        }
+    }
+    .card-actions{
+         img{
+        height: 20px;
+        width: 20px;
+        cursor: pointer;
+        }
+        span{
+        cursor: pointer;
+        }
+            align-items: center;
+    display: flex;
+    }
+}
+
+
+
+@media only screen and (max-width: 600px) {
+ 
+.card{
+    .card-content{
+        display: flex;
+        justify-content: space-between;
+        .detail-image{
+            display: block;
+            img{
+                max-width: none;
+            }
+        }
+    }
+}
+
+}
