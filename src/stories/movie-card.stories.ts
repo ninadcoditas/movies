@@ -3,23 +3,28 @@ import { MovieCardComponent } from '../app/components/movie/movie-card/movie-car
 
 import { moduleMetadata } from '@storybook/angular';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
-
+import { StoreModule, reducer, authreducer } from './services-module'
+import { RouterModule } from '@angular/router';
+import movielist from './movie-data'
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 export default {
     title: 'Example/Movie-card',
     component: MovieCardComponent,
     argTypes: {
-        movie: {
-            name: "The Shawshank Redemption ",
-            genre: "Drama ",
-            rating: 9.3,
-            cast: ["Tim Robbins", "Morgan Free", "Bob Guntonman"],
-            id: 2,
-        }
+        movie: movielist[0],
+        isLoggedIn: true
     },
     decorators: [
         moduleMetadata({
-            imports: [],
+            imports: [
+                RouterModule.forRoot([], { useHash: true }),
+                StoreModule.forRoot({
+                    movie: reducer,
+                    auth: authreducer
+                }),
+                FontAwesomeModule
+            ],
             schemas: [CUSTOM_ELEMENTS_SCHEMA]
         }),
     ],
@@ -30,18 +35,14 @@ const Template: Story<MovieCardComponent> = (args: MovieCardComponent) => ({
     props: args,
 });
 
-export const Primary = Template.bind({});
-Primary.args = {
-    movie: {
-        "name": "Fight Club",
-        "genre": "Drama",
-        "rating": 8.8,
-        "cast": [
-            "Edward Norton ",
-            "Brad Pitt ",
-            " Meat Loaf"
-        ],
-        "id": 3,
-        "image": "https://m.media-amazon.com/images/M/MV5BMmEzNTkxYjQtZTc0MC00YTVjLTg5ZTEtZWMwOWVlYzY0NWIwXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_UX182_CR0,0,182,268_AL_.jpg"
-    }
+export const LoggedIn = Template.bind({});
+LoggedIn.args = {
+    movie: movielist[0],
+    isLoggedIn: true
+};
+
+export const LoggedOut = Template.bind({});
+LoggedOut.args = {
+    movie: movielist[0],
+    isLoggedIn: false
 };
