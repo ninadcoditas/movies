@@ -3,7 +3,6 @@ import { Store } from '@ngrx/store';
 import { AppState } from '../../../app.state'
 import { Router } from '@angular/router'
 import * as AuthActions from '../../../actions/auth.actions'
-import { User } from '../../../model/User';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 @Component({
@@ -13,7 +12,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 })
 export class LoginComponent implements OnInit {
   isLoggedIn;
-  subscription
+  subscription$
 
   loginForm: FormGroup
 
@@ -21,7 +20,7 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.subscription = this.store.select("auth").subscribe((data) => {
+    this.subscription$ = this.store.select("auth").subscribe((data) => {
       this.isLoggedIn = data["isLoggedIn"]
     });
 
@@ -36,7 +35,7 @@ export class LoginComponent implements OnInit {
     // console.log(this.loginForm.value)
 
     this.store.dispatch(new AuthActions.Login(this.loginForm.value))
-    this.subscription = this.store.select("auth").subscribe((data) => {
+    this.subscription$ = this.store.select("auth").subscribe((data) => {
       this.isLoggedIn = data["isLoggedIn"]
     });
     this.isLoggedIn == true ? this.router.navigate(['/home']) : alert("Password or username is incorrect");
@@ -44,6 +43,6 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnDestroy() {
-    this.subscription.unsubscribe()
+    this.subscription$.unsubscribe()
   }
 }

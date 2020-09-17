@@ -18,7 +18,7 @@ function checkImageExists(imageUrl) {
 
 export async function ImageValidator(control: AbstractControl): Promise<{ [key: string]: boolean; }> {
     let res = await checkImageExists(control.value)
-    debugger;
+    // debugger;
     console.log(res)
     if (res == true) {
         return null
@@ -26,13 +26,4 @@ export async function ImageValidator(control: AbstractControl): Promise<{ [key: 
     return {
         image: true
     };
-}
-
-
-
-export function ValidateLastName(control: AbstractControl) {
-    if (control.value.length <= 3) {
-        return { validLname: true };
-    }
-    return null;
 }

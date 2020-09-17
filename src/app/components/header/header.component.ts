@@ -27,7 +27,7 @@ import { ThemeService } from '../../services/theme.service'
 export class HeaderComponent implements OnInit {
 
   isLoggedIn: Observable<boolean>;
-  subscription;
+  subscription$;
 
   faEdit: IconDefinition;
   faLightbulb: IconDefinition;
@@ -36,7 +36,7 @@ export class HeaderComponent implements OnInit {
   isDark: boolean
 
   constructor(public store: Store<AppState>, public themeService: ThemeService) {
-    this.subscription = store.select("auth").subscribe((data) => {
+    this.subscription$ = store.select("auth").subscribe((data) => {
       this.isLoggedIn = data["isLoggedIn"]
     });
 
@@ -48,19 +48,12 @@ export class HeaderComponent implements OnInit {
     this.setLightbulb();
   }
 
-  // ngOnChanges() {
-  //   this.isDark = this.themeService.isDarkTheme()
-
-  // }
-
   Logout() {
     this.store.dispatch(new AuthActions.Logout())
-    this.subscription = this.store.select("auth").subscribe((data) => {
+    this.subscription$ = this.store.select("auth").subscribe((data) => {
       this.isLoggedIn = data["isLoggedIn"]
     });
   }
-
-
 
   toggleTheme() {
     if (this.themeService.isDarkTheme()) {
@@ -88,7 +81,7 @@ export class HeaderComponent implements OnInit {
   ngOnDestroy(): void {
     //Called once, before the instance is destroyed.
     //Add 'implements OnDestroy' to the class.
-    this.subscription.unsubscribe();
+    this.subscription$.unsubscribe();
   }
 
 }
