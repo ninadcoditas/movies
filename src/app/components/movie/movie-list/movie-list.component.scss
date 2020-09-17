@@ -5,7 +5,12 @@
     overflow-y: scroll;
     min-height: 350px;
     .no-movie{
+        display: flex;
         justify-content: center;
+        margin: 10px;
+        padding: 10px;
+        background-color: var(--card-background);
+        color:var(--text-color);
     }
 }
 
